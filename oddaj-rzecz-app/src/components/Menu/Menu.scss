@@ -1,0 +1,23 @@
+@import "src/sass/settings/colors";
+
+.Menu {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+
+  &__item {
+    font-size: 1.125rem;
+    font-weight: 400;
+    color: $text;
+    padding: 9px 20px;
+    border: 0.75px solid transparent;
+
+    &:hover {
+      border-color: $text;
+    }
+
+    &:active {
+      border-color: $button-border;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+@import "src/sass/settings/colors";
+
+.ButtonZorganizujZbiorke {
+  font-size: 2.25rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  line-height: 2.8125rem;
+  text-align: center;
+  height: 7.5rem;
+  width: 19.375rem;
+  border: 0.75px solid $text;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__link {
+    text-decoration: none;
+    color: $text;
+
+    &:active {
+      color: $button-border;
+    }
+  }
+
+  &:hover {
+    border-color: $button-border;
+  }
+}
