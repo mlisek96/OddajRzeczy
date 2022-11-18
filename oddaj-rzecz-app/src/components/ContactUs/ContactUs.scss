@@ -1,0 +1,22 @@
+.ContactUs {
+  width: 100vw;
+  height: 64.125rem;
+  position: relative;
+
+  &-background {
+    background-image: url("../../assets/Background-Contact-Form.jpg");
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    z-index: -2;
+
+    &::after {
+      content: '';
+      background-color: rgba(255, 255, 255, 0.75);
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+  }
+}

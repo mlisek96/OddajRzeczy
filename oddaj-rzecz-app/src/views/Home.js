@@ -1,22 +1,20 @@
-import React from "react";
-import HomeHeroImage from '../assets/Home-Hero-Image.jpg'
-import {Decoration} from "../components/Decoration/Decoration";
-import {ButtonOddajRzeczy} from "../components/ButtonOddajRzeczy/ButtonOddajRzeczy";
-import {ButtonZorganizujZbiorke} from "../components/ButtonZorganizujZbiórkę/ButtonZorganizujZbiórkę";
+import {ThreeColumns} from "../components/ThreeColumns/ThreeColumns";
+import {SimpleSteps} from "../components/SimpleSteps/SimpleSteps";
+import {Header} from "../components/Header/Header";
+import {AboutUs} from "../components/AboutUs/AboutUs";
+import {WhoWeHelp} from "../components/WhoWeHelp/WhoWeHelp";
+import {ContactUs} from "../components/ContactUs/ContactUs";
 import './Home.scss'
 
 export function Home() {
     return (
         <div className='Home'>
-            <img className='Home-image' src={HomeHeroImage} alt="Home hero image"/>
-            <div className='Home-content'>
-                <h1 className='Home-content__text'>Zacznij Pomagać!<br/>Oddaj niechciane rzeczy w zaufane ręce</h1>
-                <Decoration/>
-                <div className='Home-content__buttons'>
-                    <ButtonOddajRzeczy/>
-                    <ButtonZorganizujZbiorke/>
-                </div>
-            </div>
+            <Header />
+            <ThreeColumns />
+            <SimpleSteps />
+            <AboutUs />
+            <WhoWeHelp />
+            <ContactUs />
         </div>
     )
 }

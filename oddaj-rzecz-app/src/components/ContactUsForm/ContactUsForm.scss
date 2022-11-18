@@ -1,0 +1,17 @@
+.ContactUsForm {
+  padding-top: 4.375rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+
+  &-inputs {
+    display: flex;
+    padding-bottom: 2.5rem;
+    justify-content: stretch;
+    gap: 1rem;
+  }
+
+  &-button {
+    align-self: end;
+  }
+}

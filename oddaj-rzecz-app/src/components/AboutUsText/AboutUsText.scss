@@ -1,0 +1,19 @@
+.AboutUsText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 9.375rem;
+
+  &-paragraph {
+    font-size: 1.875rem;
+    font-weight: 400;
+    text-align: center;
+    line-height: 3.375rem;
+    padding: 3.4375rem 0 2.5rem;
+  }
+
+  &-image {
+    align-self: end;
+  }
+}

@@ -1,8 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import './Login.scss'
+import './LoginRegister.scss'
 
-export function Login() {
+export function LoginRegister() {
     return (
         <ul className="Login">
             <li>

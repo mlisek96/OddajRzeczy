@@ -1,0 +1,49 @@
+@import 'src/sass/settings/colors';
+@import 'src/sass/settings/fonts';
+
+.ThreeColumns {
+
+  &-list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100vw;
+    height: 24rem;
+    //gap: 17rem;
+    //background-image: url("../src/assets/3 Columns Background.png");
+    background-color: $button-border;
+
+    &-item {
+      width: 20rem;
+      height: 15.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+
+      &__number {
+        color: $text-numbers;
+        font-size: 5.625rem;
+        font-weight: 300;
+      }
+
+      &__header {
+        text-transform: uppercase;
+        color: $text;
+        font-size: 1.125rem;
+        font-weight: 400;
+      }
+
+      &__text {
+        font-size: 0.85rem;
+        font-weight: 300;
+        line-height: 1.625rem;
+        text-align: center;
+        font-family: $font-alt;
+        letter-spacing: -0.32px;
+        color: $text;
+      }
+    }
+
+  }
+}
