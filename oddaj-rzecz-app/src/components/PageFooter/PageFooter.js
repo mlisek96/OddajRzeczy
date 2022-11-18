@@ -1,23 +1,18 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { IconBrandGithub } from '@tabler/icons';
 import './PageFooter.scss'
 
 export function PageFooter() {
     return (
         <footer className='PageFooter'>
             <p className="PageFooter__text">Copyright by Coders Lab</p>
-            <ul className="PageFooter-icons">
-                <li>
-                    <Link className="PageFooter-icons__item PageFooter-icons__facebook">
-                        {/*<img src="../../assets/Instagram.svg" alt="Instagram Icon"/>*/}
-                    </Link>
-                </li>
-                <li>
-                    <Link className="PageFooter-icons__item PageFooter-icons__instagram">
-                        
-                    </Link>
-                </li>
-            </ul>
+            <div className='PageFooter__author'>
+                Created by
+                <a className='PageFooter__author-github' href='https://github.com/mlisek96' target='_blank'>
+                    <IconBrandGithub size='16' className='PageFooter__author-github__icon'/>
+                    {''} mlisek96
+                </a>
+            </div>
         </footer>
     )
 }

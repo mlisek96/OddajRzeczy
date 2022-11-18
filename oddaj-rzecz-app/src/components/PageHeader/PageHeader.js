@@ -1,13 +1,13 @@
 import React from "react";
-import {Menu} from "../Menu/Menu";
-import {Login} from "../Login/Login";
+import {Navigation} from "../Navigation/Navigation";
+import {LoginRegister} from "../LoginRegister/LoginRegister";
 import './PageHeader.scss'
 
 export function PageHeader() {
     return (
         <header className='PageHeader'>
-            <Login />
-            <Menu />
+            <LoginRegister />
+            <Navigation />
         </header>
     )
 }

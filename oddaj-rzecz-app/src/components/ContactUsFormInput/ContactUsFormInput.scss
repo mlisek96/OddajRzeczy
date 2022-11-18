@@ -1,0 +1,34 @@
+@import "src/sass/settings/colors";
+@import "src/sass/settings/fonts";
+
+.Input {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  &-label {
+    font-size: 1rem;
+    font-weight: 600;
+    padding-bottom: 0.75rem;
+  }
+
+  &-input {
+    font-size: 1.125rem;
+    font-family: $font-base;
+    height: 1.5rem;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-bottom: 1px solid $line-border-opacity;
+
+    &::placeholder {
+      font-size: 1rem;
+      color: $text-placeholder;
+      padding: 0;
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid $button-border;
+    }
+  }
+}

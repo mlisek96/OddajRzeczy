@@ -18,7 +18,6 @@ function App() {
                 </Route>
             </Routes>
         </Router>
-        // <div>123</div>
     );
 }
 

@@ -1,0 +1,24 @@
+.WhoWeHelpFundations {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 17.375rem;
+
+  &-text {
+    padding: 0 22rem 4.125rem;
+    font-size: 1.375rem;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1.875rem;
+  }
+
+  &-lines {
+    width: 100%;
+  }
+
+  &-pages {
+    display: flex;
+    padding-top: 4.125rem;
+    gap: 1rem;
+  }
+}

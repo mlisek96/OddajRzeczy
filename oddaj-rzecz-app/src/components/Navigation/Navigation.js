@@ -1,12 +1,13 @@
 import React from "react";
-import {Link} from "react-scroll"
-import './Menu.scss'
+import {Link} from "react-scroll";
+import {NavLink} from "react-router-dom";
+import './Navigation.scss';
 
-export function Menu() {
+export function Navigation() {
     return (
         <ul className="Menu">
             <li>
-                <Link className="Menu__item">Start</Link>
+                <NavLink className="Menu__item" to='/'>Start</NavLink>
             </li>
             <li>
                 <Link className="Menu__item">O co chodzi?</Link>

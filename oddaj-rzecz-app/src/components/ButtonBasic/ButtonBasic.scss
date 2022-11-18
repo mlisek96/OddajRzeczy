@@ -1,12 +1,12 @@
 @import "src/sass/settings/colors";
 
-.ButtonZorganizujZbiorke {
+.ButtonBasic {
   font-size: 2.25rem;
   font-weight: 300;
   text-transform: uppercase;
   line-height: 2.8125rem;
   text-align: center;
-  height: 7.5rem;
+  height: 7.375rem;
   width: 19.375rem;
   border: 0.75px solid $text;
   display: flex;
@@ -16,6 +16,7 @@
   &__link {
     text-decoration: none;
     color: $text;
+    padding: 0 3.125rem;
 
     &:active {
       color: $button-border;
@@ -25,4 +26,5 @@
   &:hover {
     border-color: $button-border;
   }
+
 }
