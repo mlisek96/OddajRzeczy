@@ -10,16 +10,53 @@ export function Navigation() {
                 <NavLink className="Menu__item" to='/'>Start</NavLink>
             </li>
             <li>
-                <Link className="Menu__item">O co chodzi?</Link>
+                <Link
+                    className="Menu__item"
+                    to="SimpleSteps"
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                    delay={250}
+                >
+                    O co chodzi?
+                </Link>
             </li>
             <li>
-                <Link className="Menu__item">O nas</Link>
+                <Link
+                    className="Menu__item"
+                    to="AboutUs"
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                    delay={250}
+                >
+                    O nas
+                </Link>
             </li>
             <li>
-                <Link className="Menu__item">Fundacja i organizacje</Link>
+                <Link
+                    className="Menu__item"
+                    to="WhoWeHelp"
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                    delay={250}
+                >
+                    Fundacja i organizacje
+                </Link>
             </li>
             <li>
-                <Link className="Menu__item">Kontakt</Link>
+                <Link
+                    className="Menu__item"
+                    to="ContactUs"
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                    delay={250}
+                    offset={100}
+                >
+                    Kontakt
+                </Link>
             </li>
         </ul>
     )
