@@ -1,3 +1,4 @@
+import {useState} from "react";
 import {DecorationHeader} from "../DecorationHeader/DecorationHeader";
 import {WhoWeHelpMenu} from "../WhoWeHelpMenu/WhoWeHelpMenu";
 import {WhoWeHelpFundations} from "../WhoWeHelpFundations/WhoWeHelpFundations";
@@ -6,13 +7,17 @@ import {WhoWeHelpCollection} from "../WhoWeHelpCollection/WhoWeHelpCollection";
 import './WhoWeHelp.scss';
 
 export function WhoWeHelp() {
+    const [active, setActive] = useState('Foundations')
+
     return (
         <div className="WhoWeHelp">
             <DecorationHeader headerText={'Komu pomagamy?'}/>
-            <WhoWeHelpMenu/>
-            <WhoWeHelpFundations />
-            {/*<WhoWeHelpOrganization />*/}
-            {/*<WhoWeHelpCollection />*/}
+            <WhoWeHelpMenu setActive={setActive}/>
+            <div>
+                {active === 'Foundations' && <WhoWeHelpFundations />}
+                {active === 'Organization' && <WhoWeHelpOrganization />}
+                {active === 'Collection' && <WhoWeHelpCollection />}
+            </div>
         </div>
     )
 }

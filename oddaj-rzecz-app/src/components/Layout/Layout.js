@@ -11,7 +11,6 @@ export function Layout() {
             <main className="Layout__main">
                 <Outlet/>
             </main>
-            <PageFooter />
         </div>
     )
 

@@ -4,7 +4,6 @@ import {Header} from "../components/Header/Header";
 import {AboutUs} from "../components/AboutUs/AboutUs";
 import {WhoWeHelp} from "../components/WhoWeHelp/WhoWeHelp";
 import {ContactUs} from "../components/ContactUs/ContactUs";
-import './Home.scss'
 
 export function Home() {
     return (

@@ -1,12 +1,21 @@
 import {WhoWeHelpMenuButton} from "../WhoWeHelpMenuButton/WhoWeHelpMenuButton";
 import './WhoWeHelpMenu.scss';
 
-export function WhoWeHelpMenu() {
+export function WhoWeHelpMenu({setActive}) {
     return (
         <div className="WhoWeHelpMenu">
-            <WhoWeHelpMenuButton buttonText={'Fundacjom'}/>
-            <WhoWeHelpMenuButton buttonText={'Organizacjom pozarządowym'}/>
-            <WhoWeHelpMenuButton buttonText={'Lokalnym zbiórkom'}/>
+            <WhoWeHelpMenuButton
+                buttonText={'Fundacjom'}
+                onClick={() => setActive('Foundations')}
+            />
+            <WhoWeHelpMenuButton
+                buttonText={'Organizacjom pozarządowym'}
+                onClick={() => setActive('Organization')}
+            />
+            <WhoWeHelpMenuButton
+                buttonText={'Lokalnym zbiórkom'}
+                onClick={() => setActive('Collection')}
+            />
         </div>
     )
 }

@@ -1,0 +1,47 @@
+@import "src/sass/settings/colors";
+
+.pagination {
+  width: 100%;
+
+  &-bttns {
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+    gap: 1rem;
+  }
+
+  &-bttns a {
+    font-size: 1.125rem;
+    font-weight: 300;
+    line-height: 2.8125rem;
+    text-align: center;
+    height: 3.125rem;
+    width: 2.5rem;
+    border: 0.75px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      border-color: $text;
+    }
+
+    &:active {
+      border-color: $button-border;
+    }
+  }
+
+  &-active {
+    outline: 0.75px solid $text;
+
+    &:hover {
+      outline: none;
+    }
+
+    &:active {
+      border-color: $button-border;
+    }
+  }
+}
