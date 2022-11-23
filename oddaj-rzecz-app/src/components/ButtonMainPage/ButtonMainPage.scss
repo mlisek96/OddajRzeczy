@@ -1,12 +1,12 @@
 @import "src/sass/settings/colors";
 
-.WhoWeHelpMenuButton {
+.ButtonMainPage {
   font-size: 1.5rem;
   font-weight: 400;
   text-align: center;
   height: 5rem;
   width: 13rem;
-  border: 0.75px solid transparent;
+  border: 0.75px solid $text;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,17 +14,13 @@
   &__link {
     text-decoration: none;
     color: $text;
-  }
 
-  &:hover {
-    border-color: $text;
+    &:active {
+      color: $button-border;
+    }
   }
 
   &:active {
     border-color: $button-border;
   }
-}
-
-.active {
-  border-color: $text;
 }

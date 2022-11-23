@@ -1,0 +1,27 @@
+@import "src/sass/settings/colors";
+
+.LogInContainer {
+  width: 32.21875rem;
+  height: 20.3125rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 3.75rem;
+
+
+  &-form {
+    box-sizing: border-box;
+    background-color: $background-gray;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin: 0 4.09375rem 2.5rem;
+    padding: 2.5rem 4.203125rem;
+    height: 14.6875rem;
+  }
+
+  &-bttns {
+    display: flex;
+    justify-content: space-between;
+  }
+}
