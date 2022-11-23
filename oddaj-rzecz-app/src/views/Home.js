@@ -7,7 +7,7 @@ import {ContactUs} from "../components/ContactUs/ContactUs";
 
 export function Home() {
     return (
-        <div className='Home'>
+        <div>
             <Header />
             <ThreeColumns />
             <SimpleSteps />

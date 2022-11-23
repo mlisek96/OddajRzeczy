@@ -8,4 +8,5 @@ body {
   color: $text;
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
 }

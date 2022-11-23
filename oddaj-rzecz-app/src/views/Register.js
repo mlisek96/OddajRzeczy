@@ -1,10 +1,10 @@
-import {LogInComponent} from "../components/LogIn/LogIn";
 import {PageFooter} from "../components/PageFooter/PageFooter";
+import {RegisterComponent} from "../components/Register/Register";
 
-export function LogIn() {
+export function Register() {
     return (
         <div>
-            <LogInComponent />
+            <RegisterComponent />
             <PageFooter />
         </div>
     )

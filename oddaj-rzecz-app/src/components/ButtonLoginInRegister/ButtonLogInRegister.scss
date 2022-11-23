@@ -1,12 +1,13 @@
 @import "src/sass/settings/colors";
 
-.WhoWeHelpMenuButton {
-  font-size: 1.5rem;
-  font-weight: 400;
+.ButtonLogInRegister {
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 2rem;
   text-align: center;
-  height: 5rem;
-  width: 13rem;
-  border: 0.75px solid transparent;
+  height: 3.125rem;
+  width: 7.25rem;
+  border: 0.75px solid $text;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,15 +17,7 @@
     color: $text;
   }
 
-  &:hover {
-    border-color: $text;
-  }
-
   &:active {
     border-color: $button-border;
   }
-}
-
-.active {
-  border-color: $text;
 }
