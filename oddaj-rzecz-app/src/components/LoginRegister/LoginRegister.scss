@@ -1,26 +1,6 @@
-@import "src/sass/settings/colors";
-
 .Login {
   display: flex;
   justify-content: right;
-  gap: 1.875rem;
+  gap: 0.625rem;
   padding-right: 1.25rem;
-  z-index: 5;
-
-  &__item {
-    font-size: 0.875rem;
-    font-weight: 400;
-    color: $button-text;
-    text-decoration: none;
-    padding: 0.5625rem 0.625rem;
-    border: 0.75px solid transparent;
-
-    &:hover {
-      border-color: $button-border;
-    }
-
-    &:active {
-      color: $button-border;
-    }
-  }
 }

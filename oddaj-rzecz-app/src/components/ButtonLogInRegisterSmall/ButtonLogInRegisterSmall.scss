@@ -1,0 +1,30 @@
+@import "src/sass/settings/colors";
+
+.ButtonLogInRegisterSmall {
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-align: center;
+  border: 0.75px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  &__link {
+    text-decoration: none;
+    color: $button-text;
+    padding: 0.5625rem 0.625rem;
+
+    &:active {
+     color: $button-border;
+    }
+  }
+
+  &:hover {
+    border-color: $button-text;
+  }
+
+  &:active {
+    border-color: $button-border;
+  }
+}

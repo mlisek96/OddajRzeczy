@@ -6,10 +6,13 @@
   position: relative;
 
   &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 1.125rem;
     font-weight: 400;
     color: $text;
-    padding: 9px 20px;
+    padding: 0.5625rem 1.25rem;
     border: 0.75px solid transparent;
     text-decoration: none;
     cursor: pointer;

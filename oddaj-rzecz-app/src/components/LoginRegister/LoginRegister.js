@@ -1,16 +1,20 @@
-import React from "react";
-import {Link} from "react-router-dom";
+import {ButtonLogInRegisterSmall} from "../ButtonLogInRegisterSmall/ButtonLogInRegisterSmall";
 import './LoginRegister.scss'
 
 export function LoginRegister() {
     return (
         <ul className="Login">
-            <li>
-                <Link className="Login__item" to='/logowanie'>Zaloguj</Link>
-            </li>
-            <li>
-                <Link className="Login__item" to='/rejestracja'>Załóż konto</Link>
-            </li>
+            <ButtonLogInRegisterSmall
+                buttonText={'Zaloguj'}
+                linkTo={'/logowanie'}
+            />
+            <ButtonLogInRegisterSmall
+                buttonText={'Załóż konto'}
+                linkTo={'/rejestracja'}
+                style={{
+                    borderColor: "#FAD648",
+                }}
+            />
         </ul>
     )
 }

@@ -14,4 +14,13 @@
   &-button {
     align-self: end;
   }
+
+  &-success {
+    font-size: 1rem;
+    font-weight: 600;
+    color: green;
+    text-align: center;
+    line-height: 1.25rem;
+    padding-bottom: 2rem;
+  }
 }
