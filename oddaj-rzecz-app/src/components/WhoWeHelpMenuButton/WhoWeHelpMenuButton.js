@@ -4,6 +4,7 @@ import './WhoWeHelpMenuButton.scss';
 export function WhoWeHelpMenuButton({linkTo, buttonText, onClick, active}) {
     return (
         <div
+            // className={'WhoWeHelpMenuButton'}
             className={active === 'Foundations' ? `WhoWeHelpMenuButton active` : "WhoWeHelpMenuButton"}
             onClick={onClick}
             // style={{
