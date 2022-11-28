@@ -7,18 +7,20 @@ export function WhoWeHelpMenu({active, setActive}) {
             <WhoWeHelpMenuButton
                 buttonText={'Fundacjom'}
                 onClick={() => setActive('Foundations')}
-                // active={active}
-                active={'Foundations'}
+                active={active}
+                // active={'Foundations'}
             />
             <WhoWeHelpMenuButton
                 buttonText={'Organizacjom pozarządowym'}
                 onClick={() => setActive('Organization')}
-                // active={active}
+                active={active}
+                // active={'Organization'}
             />
             <WhoWeHelpMenuButton
                 buttonText={'Lokalnym zbiórkom'}
                 onClick={() => setActive('Collection')}
-                // active={active}
+                active={active}
+                // active={'Collection'}
             />
         </div>
     )

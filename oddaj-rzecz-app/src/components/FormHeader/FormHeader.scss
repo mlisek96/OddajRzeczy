@@ -1,0 +1,38 @@
+.FormHeader {
+  padding-right: 4rem;
+  //height: 45.625rem;
+
+  &-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+  }
+
+  &-content {
+    margin: 10rem 4rem 0 60rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__header {
+      font-size: 2.375rem;
+      font-weight: 400;
+      line-height: 3.375rem;
+      text-align: center;
+      padding-bottom: 2rem;
+    }
+
+    &__text {
+      font-size: 2.5rem;
+      font-weight: 300;
+      text-align: center;
+      line-height: 3.4375rem;
+      padding: 1.1875rem 0 1.5625rem;
+    }
+
+    &__steps {
+      padding-bottom: 6.6rem;
+    }
+  }
+}

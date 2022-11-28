@@ -2,7 +2,7 @@
 
 .LogInContainer {
   width: 32.21875rem;
-  height: 20.3125rem;
+  min-height: 20.3125rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -17,7 +17,7 @@
     gap: 2rem;
     margin: 0 4.09375rem 2.5rem;
     padding: 2.5rem 4.203125rem;
-    height: 14.6875rem;
+    min-height: 14.6875rem;
   }
 
   &-bttns {

@@ -1,0 +1,11 @@
+.DecorationArray {
+  display: flex;
+  justify-content: center;
+  max-width: 41.4375rem;
+  //max-width: 47.5rem;
+
+  &-item {
+    display: flex;
+    max-width: 25.5%;
+  }
+}

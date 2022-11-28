@@ -12,7 +12,7 @@ export function WhoWeHelp() {
     return (
         <div className="WhoWeHelp">
             <DecorationHeader headerText={'Komu pomagamy?'}/>
-            <WhoWeHelpMenu setActive={setActive}/>
+            <WhoWeHelpMenu setActive={setActive} active={active}/>
             <div>
                 {active === 'Foundations' && <WhoWeHelpFundations />}
                 {active === 'Organization' && <WhoWeHelpOrganization />}

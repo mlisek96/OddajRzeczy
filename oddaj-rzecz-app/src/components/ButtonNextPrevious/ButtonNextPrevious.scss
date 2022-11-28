@@ -1,0 +1,23 @@
+@import "src/sass/settings/colors";
+
+.ButtonNextPrevious {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 2rem;
+  text-align: center;
+  height: 5rem;
+  width: 11.25rem;
+  border: 0.75px solid $text;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__link {
+    text-decoration: none;
+    color: $text;
+  }
+
+  &:active {
+    border-color: $button-border;
+  }
+}
