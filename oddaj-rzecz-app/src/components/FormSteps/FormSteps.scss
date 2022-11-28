@@ -1,0 +1,16 @@
+.FormSteps {
+  height: 55.1875rem;
+  width: 100vw;
+  position: relative;
+
+  &-background {
+    background-image: url("../../assets/Background-Form.jpg");
+    margin-top: 11.1875rem;
+    width: 100vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -2;
+    background-repeat: no-repeat;
+  }
+}

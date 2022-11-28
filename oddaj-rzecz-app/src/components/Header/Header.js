@@ -1,7 +1,7 @@
 import {Decoration} from "../Decoration/Decoration";
 import {ButtonBasic} from "../ButtonBasic/ButtonBasic";
 import HomeHeroImage from "../../assets/Home-Hero-Image.jpg";
-import './Header.scss'
+import './Header.scss';
 
 export function Header() {
     return (

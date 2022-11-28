@@ -5,25 +5,27 @@ import {ButtonSubmit} from "../ButtonSubmit/ButtonSubmit";
 import './ContactUsForm.scss';
 
 const validateEmail = (email) => {
-    return email.match(
-        /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    )
-}
+    // return email.match(
+    //     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    // )
+    let re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return re.test(email)
+};
 
 const validateFunction = (form) => {
     const errorMsg = {}
 
     if (!form.name) {
         // errorMsg.name = 'Entering name is required'
-        errorMsg.name = 'Entered name is required'
-    } else if (form.name.trim().indexOf('') !== -1) {
+        errorMsg.name = 'Name has contain only one word'
+    } else if (form.name.trim().indexOf( '' ) !== -1) {
         errorMsg.name = 'Name has contain only one word'
     }
 
     if (!form.email) {
         // errorMsg.email = 'Entering email is required'
         errorMsg.email = 'Entered email is invalid'
-    } else if (validateEmail(form.email)) {
+    } else if (validateEmail(form.email) === false) {
         errorMsg.email = 'Entered email is invalid'
     }
 
