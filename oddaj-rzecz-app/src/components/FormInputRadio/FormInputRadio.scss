@@ -1,0 +1,23 @@
+@import "src/sass/settings/colors";
+
+.InputRadio {
+  display: flex;
+  gap: 1.875rem;
+  align-items: center;
+
+  &-input {
+    appearance: none;
+    height: 2.5rem;
+    width: 2.5rem;
+    border: 0.75px solid $text;
+
+    &:checked {
+      background-color: $button-border;
+    }
+  }
+
+  &-label {
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+}

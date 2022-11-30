@@ -1,10 +1,11 @@
 import {FormInputRadio} from "../FormInputRadio/FormInputRadio";
 import {ButtonNextPrevious} from "../ButtonNextPrevious/ButtonNextPrevious";
+import './FormOneForm.scss';
 
 export function FormOneForm() {
     return (
-        <div className="FormOnForm">
-            <div className="FormOnForm-inputs">
+        <div className="FormOneForm">
+            <div className="FormOneForm-inputs">
                 <FormInputRadio
                     name={'formOne'}
                     label={'ubrania, które nadają się do ponownego użycia'}
@@ -36,7 +37,7 @@ export function FormOneForm() {
                     // onClick={}
                 />
             </div>
-            <div className="FormOnForm-btn">
+            <div className="FormOneForm-btn">
                 <ButtonNextPrevious
                     buttonText={'Dalej'}
                 />

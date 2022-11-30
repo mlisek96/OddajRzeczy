@@ -1,7 +1,10 @@
+import './FormInputRadio.scss';
+
 export function FormInputRadio({name, label, value, onClick}) {
     return (
         <div className="InputRadio">
             <input
+                className='InputRadio-input'
                 type="radio"
                 name={name}
                 value={value}
