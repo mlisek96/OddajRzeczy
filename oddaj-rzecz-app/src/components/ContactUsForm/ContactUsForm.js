@@ -16,24 +16,21 @@ const validateFunction = (form) => {
     const errorMsg = {}
 
     if (!form.name) {
-        // errorMsg.name = 'Entering name is required'
-        errorMsg.name = 'Name has contain only one word'
-    } else if (form.name.trim().indexOf( '' ) !== -1) {
+        errorMsg.name = 'Entering name is required'
+    } else if (/\s/.test(form.name) === true) {
         errorMsg.name = 'Name has contain only one word'
     }
 
     if (!form.email) {
-        // errorMsg.email = 'Entering email is required'
-        errorMsg.email = 'Entered email is invalid'
+        errorMsg.email = 'Entering email is required'
     } else if (validateEmail(form.email) === false) {
         errorMsg.email = 'Entered email is invalid'
     }
 
     if (!form.message) {
-        // errorMsg.message = 'Entering message is required'
-        errorMsg.message = 'Message has contain more than 120'
+        errorMsg.message = 'Entering message is required'
     } else if (form.message.length < 120) {
-        errorMsg.message = 'Message has contain more than 120'
+        errorMsg.message = 'Message should be at least 120 characters long'
     }
 
     return Object.keys(errorMsg).length > 0 ? errorMsg : null;
@@ -41,14 +38,16 @@ const validateFunction = (form) => {
 
 export function ContactUsForm() {
     const [errorMsg, setErrorMsg] = useState(null)
-    const [success, setSuccess] = useState(null)
+    const [success, setSuccess] = useState({
+        status: '',
+    })
     const [form, setForm] = useState({
         name: '',
         email: '',
         message: '',
     })
 
-    const handleChangeName = (event) => {
+    const handleChange = (event) => {
         const {name, value} = event.target
         setForm(prevForm => {
             return {
@@ -58,51 +57,40 @@ export function ContactUsForm() {
         })
     }
 
-    const handleChangeEmail = (event) => {
-        const {name, value} = event.target
-        setForm(prevForm => {
-            return {
-                ...prevForm,
-                [name]: value
-            }
-        })
-    }
-
-    const handleChangeMessage = (event) => {
-        const {name, value} = event.target
-        setForm(prevForm => {
-            return {
-                ...prevForm,
-                [name]: value
-            }
-        })
-    }
-
-    function handleClick(event) {
+    const submitHandler = (event) => {
         event.preventDefault();
-        const errorMsg = validateFunction(form)
+        const errorMsg = validateFunction(form);
+        // console.log(form);
 
         if (errorMsg) {
             setErrorMsg(errorMsg)
             console.log(errorMsg)
-            return
-        } else if (errorMsg === null) {
-            setSuccess(success)
+        } else {
+            fetch("https://fer-api.coderslab.pl/v1/portfolio/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(form)
+            })
+                .then(response => response.json())
+                .then(data => setSuccess(data))
+                // .then(data => console.log(data))
+                .catch(error => setSuccess(error))
         }
-
-        setForm({
-            name: '',
-            email: '',
-            message: '',
-        })
     }
 
     return (
-        <div className="ContactUsForm">
-            {success !== null ? <p
+        <form onSubmit={submitHandler} className="ContactUsForm">
+            {success.status === 'success' ? <p
                 className={'ContactUsForm-success'}
             >
-             Wiadomość została wysłana!<br/>Wkrótce się skontaktujemy.
+                Wiadomość została wysłana!<br/>Wkrótce się skontaktujemy.
+            </p> : null}
+            {success.status === 'error' ? <p
+                className={'ContactUsForm-error'}
+            >
+                Wiadomość nie została wysłana!<br/>Wypełnij formularz poprawnie.
             </p> : null}
             <div className="ContactUsForm-inputs">
                 <ContactUsFormInput
@@ -111,7 +99,7 @@ export function ContactUsForm() {
                     label={'Wpisz swoje imię'}
                     placeholder={'Krzysztof'}
                     value={form.name}
-                    onChange={handleChangeName}
+                    onChange={handleChange}
                     errorMsg={errorMsg}
                 />
                 <ContactUsFormInput
@@ -120,7 +108,7 @@ export function ContactUsForm() {
                     label={'Wpisz swój email'}
                     placeholder={'abc@xyz.pl'}
                     value={form.email}
-                    onChange={handleChangeEmail}
+                    onChange={handleChange}
                     errorMsg={errorMsg}
                 />
             </div>
@@ -132,15 +120,14 @@ export function ContactUsForm() {
                     'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ' +
                     'ut aliquip ex ea commodo consequat.'}
                 value={form.message}
-                onChange={handleChangeMessage}
+                onChange={handleChange}
                 errorMsg={errorMsg}
             />
             <div className="ContactUsForm-button">
                 <ButtonSubmit
                     buttonText={'Wyślij'}
-                    onClick={handleClick}
                 />
             </div>
-        </div>
+        </form>
     )
 }

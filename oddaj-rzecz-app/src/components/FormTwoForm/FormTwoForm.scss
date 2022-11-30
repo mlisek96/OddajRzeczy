@@ -1,13 +1,18 @@
-.FormOneForm {
-  height: 38.4375rem;
+.FormTwoForm {
+  height: 37.25rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
-  &-inputs {
-    height: 23rem;
+  &-select {
+    height: 15.625rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  &-btn {
+    display: flex;
+    gap: 3.125rem;
   }
 }

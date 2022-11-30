@@ -1,4 +1,5 @@
 @import "src/sass/settings/colors";
+@import "src/sass/settings/fonts";
 
 .ButtonSubmit {
   font-size: 1.125rem;
@@ -11,11 +12,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  &__link {
-    text-decoration: none;
-    color: $text;
-  }
+  background-color: transparent;
+  font-family: $font-base;
+  color: $text;
 
   &:active {
     border-color: $button-border;

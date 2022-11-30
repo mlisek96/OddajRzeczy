@@ -23,4 +23,13 @@
     line-height: 1.25rem;
     padding-bottom: 2rem;
   }
+
+  &-error {
+    font-size: 1rem;
+    font-weight: 600;
+    color: red;
+    text-align: center;
+    line-height: 1.25rem;
+    padding-bottom: 2rem;
+  }
 }

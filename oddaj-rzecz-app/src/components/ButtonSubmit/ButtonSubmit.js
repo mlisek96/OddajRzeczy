@@ -1,26 +1,26 @@
 import {Link} from "react-router-dom";
 import './ButtonSubmit.scss';
 
-export function ButtonSubmit({linkTo, buttonText, onClick}) {
+export function ButtonSubmit({buttonText, onClick}) {
     return (
         <div
-            className="ButtonSubmit"
-            onClick={onClick}
+            // className="ButtonSubmit"
+            // onClick={onClick}
         >
-            <Link
-                className='ButtonSubmit__link'
-                to={linkTo}
+            {/*<button*/}
+            {/*    className='ButtonSubmit__link'*/}
+            {/*>*/}
+            {/*    {buttonText}*/}
+            {/*</button>*/}
+            <button
+                type="submit"
+                className={'ButtonSubmit'}
+                onClick={onClick}
             >
                 {buttonText}
-            </Link>
+            </button>
         </div>
 
-        // <button
-        //     type="submit"
-        //     className={'ButtonSubmit'}
-        //     onClick={onClick}
-        // >
-        //     {buttonText}
-        // </button>
+
     )
 }
