@@ -18,7 +18,6 @@ export function ContactUsTextarea({name, label, placeholder, value, onChange, er
                 value={value}
                 onChange={onChange}
             />
-
             {errorMsg !== null ? <p className={'Textarea-error-msg'}>Wiadomość musi mieć conajmniej 120 znaków!</p> : null}
         </div>
     )

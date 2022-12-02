@@ -1,6 +1,7 @@
-import {ButtonNextPrevious} from "../ButtonNextPrevious/ButtonNextPrevious";
 import {FormSelect} from "../FormSelect/FormSelect";
 import {FormInputCheckbox} from "../FormInputCheckbox/FormInputCheckbox";
+import {FormInput} from "../FormInput/FormInput";
+import './FormThreeForm.scss';
 
 export function FormThreeForm() {
     return (
@@ -9,25 +10,26 @@ export function FormThreeForm() {
                 <FormSelect
                     name={'localization'}
                     placeholder={'-wybierz-'}
-                    value1={'Poznań'}
-                    value2={'Warszawa'}
-                    value3={'Kraków'}
-                    value4={'Wrocław'}
-                    value5={'Katowice'}
+                    // value={value}
+                    option1={'Poznań'}
+                    option2={'Warszawa'}
+                    option3={'Kraków'}
+                    option4={'Wrocław'}
+                    option5={'Katowice'}
                 />
             </div>
             <div className="FormThreeForm-checkbox">
-                <FormInputCheckbox />
+                <FormInputCheckbox
+                    // value={value}
+                />
             </div>
             <div className="FormThreeForm-input">
-
-            </div>
-            <div className="FormTwoThree-btn">
-                <ButtonNextPrevious
-                    buttonText={'Wstecz'}
-                />
-                <ButtonNextPrevious
-                    buttonText={'Dalej'}
+                <FormInput
+                    type={'text'}
+                    name={'localization'}
+                    // value={value}
+                    label={'Wpisz nazwę konkretnej organizacji (opcjonalnie)'}
+                    className={'InputBig'}
                 />
             </div>
         </form>

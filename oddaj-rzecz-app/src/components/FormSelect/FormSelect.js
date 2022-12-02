@@ -5,11 +5,12 @@ export function FormSelect({
                                label,
                                onSelect,
                                placeholder,
-                               value1,
-                               value2,
-                               value3,
-                               value4,
-                               value5,
+                               value,
+                               option1,
+                               option2,
+                               option3,
+                               option4,
+                               option5
                            }) {
     return (
         <div className="FormSelect">
@@ -34,33 +35,33 @@ export function FormSelect({
                 </option>
                 <option
                     className="FormSelect-select__option"
-                    value={value1}
+                    value={value}
                 >
-                    {value1}
+                    {option1}
                 </option>
                 <option
                     className="FormSelect-select__option"
-                    value={value2}
+                    value={value}
                 >
-                    {value2}
+                    {option2}
                 </option>
                 <option
                     className="FormSelect-select__option"
-                    value={value3}
+                    value={value}
                 >
-                    {value3}
+                    {option3}
                 </option>
                 <option
                     className="FormSelect-select__option"
-                    value={value4}
+                    value={value}
                 >
-                    {value4}
+                    {option4}
                 </option>
                 <option
                     className="FormSelect-select__option"
-                    value={value5}
+                    value={value}
                 >
-                    {value5}
+                    {option5}
                 </option>
             </select>
         </div>

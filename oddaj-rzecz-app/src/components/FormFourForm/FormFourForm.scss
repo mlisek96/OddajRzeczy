@@ -1,0 +1,30 @@
+.FormFourForm {
+  display: flex;
+  gap: 9.5rem;
+  max-width: 58.75rem;
+
+  &__header {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2.0625rem;
+    padding-bottom: 1.25rem;
+  }
+
+  &-address {
+    &__inputs {
+      height: 16.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  &-term {
+    &__inputs {
+      height: 15rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+}
