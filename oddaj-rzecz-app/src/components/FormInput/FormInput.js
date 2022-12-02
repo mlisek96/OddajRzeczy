@@ -1,6 +1,6 @@
 import './FormInput.scss';
 
-export function FormInput({name, label, value, className, type, pattern, autoCorrect, step}) {
+export function FormInput({name, label, value, className, type, pattern, autoCorrect, step, disabled}) {
     return (
         <div className={className}>
             <label
@@ -17,6 +17,7 @@ export function FormInput({name, label, value, className, type, pattern, autoCor
                 pattern={pattern}
                 autoCorrect={autoCorrect}
                 step={step}
+                disabled={disabled}
             />
         </div>
     )

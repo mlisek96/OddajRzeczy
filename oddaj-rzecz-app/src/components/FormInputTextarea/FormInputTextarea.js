@@ -1,11 +1,11 @@
 import './FormInputTextarea.scss';
 
-export function FormInputTextarea({name, value}) {
+export function FormInputTextarea({name, value, disabled, className}) {
     return (
-        <div className="InputTextarea">
+        <div className={className}>
             <label
                 htmlFor={name}
-                className="InputTextarea-label"
+                className={`${className}-label`}
             >
                 Uwagi <br/>dla kuriera
             </label>
@@ -14,7 +14,8 @@ export function FormInputTextarea({name, value}) {
                 minLength='50'
                 maxLength='200'
                 value={value}
-                className="InputTextarea-textarea"
+                className={`${className}-textarea`}
+                disabled={disabled}
             />
         </div>
     )
