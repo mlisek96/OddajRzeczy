@@ -1,37 +1,40 @@
 import {FormInput} from "../FormInput/FormInput";
 import {FormInputTextarea} from "../FormInputTextarea/FormInputTextarea";
-import './FormFourForm.scss';
+import './FormFiveForm.scss';
 
-export function FormFourForm() {
+export function FormFiveForm() {
     return (
-        <form className="FormFourForm">
-            <div className="FormFourForm-address">
+        <div className="FormFiveForm">
+            <div className="FormFiveForm-address">
                 <h3
-                    className="FormFourForm__header"
+                    className="FormFiveForm__header"
                 >
                     Adres odbioru:
                 </h3>
-                <div className="FormFourForm-address__inputs">
+                <div className="FormFiveForm-address__inputs">
                     <FormInput
                         name={'street'}
                         label={'Ulica'}
                         type={'text'}
-                        // value={value}
-                        className={'InputSmall'}
+                        value={'Prosta 51'}
+                        className={'InputSummary'}
+                        disabled={'disabled'}
                     />
                     <FormInput
                         name={'city'}
                         label={'Miasto'}
                         type={'text'}
-                        // value={value}
-                        className={'InputSmall'}
+                        value={'Warszawa'}
+                        className={'InputSummary'}
+                        disabled={'disabled'}
                     />
                     <FormInput
                         name={'PostCode'}
                         label={'Kod pocztowy'}
                         // type={'?'}
-                        // value={value}
-                        className={'InputSmall'}
+                        value={'90-209'}
+                        className={'InputSummary'}
+                        disabled={'disabled'}
                     />
                     <FormInput
                         name={'PhoneNumber'}
@@ -39,40 +42,43 @@ export function FormFourForm() {
                         type={'tel'}
                         pattern={'[0-9]{3}-[0-9]{3}-[0-9]{3}'}
                         autoCorrect={'on'}
-                        // value={value}
-                        className={'InputSmall'}
+                        value={'473 839 483'}
+                        className={'InputSummary'}
+                        disabled={'disabled'}
                     />
                 </div>
             </div>
-            <div className="FormFourForm-term">
+            <div className="FormFiveForm-term">
                 <h3
-                    className="FormFourForm__header"
+                    className="FormFiveForm__header"
                 >
                     Termin odbioru:
                 </h3>
-                <div className="FormFourForm-term__inputs">
+                <div className="FormFiveForm-term__inputs">
                     <FormInput
                         name={'date'}
                         label={'Data'}
                         type={'date'}
-                        // value={value}
-                        className={'InputSmall'}
+                        value={'2019-10-17'}
+                        className={'InputSummary'}
+                        disabled={'disabled'}
                     />
                     <FormInput
                         name={'hour'}
                         label={'Godzina'}
                         type={'time'}
-                        // step={'1800000'}
-                        // value={value}
-                        className={'InputSmall'}
+                        value={'17:30'}
+                        className={'InputSummary'}
+                        disabled={'disabled'}
                     />
                     <FormInputTextarea
                         name={'notes'}
-                        // value={value}
-                        className={"InputTextarea"}
+                        value={'notatki'}
+                        disabled={'disabled'}
+                        className={'TextareaSummary'}
                     />
                 </div>
             </div>
-        </form>
+        </div>
     )
 }

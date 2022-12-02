@@ -6,8 +6,8 @@
   font-weight: 300;
   line-height: 2rem;
   text-align: center;
-  height: 5rem;
-  width: 11.25rem;
+  min-width: 11.25rem;
+  padding: 1.4375rem 3.25rem;
   border: 0.75px solid $text;
   display: flex;
   justify-content: center;

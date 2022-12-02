@@ -7,10 +7,10 @@ import {ButtonNextPrevious} from "../ButtonNextPrevious/ButtonNextPrevious";
 import './FormSteps.scss';
 import {FormFive} from "../FormFive/FormFive";
 import {FormBar} from "../FormBar/FormBar";
+import {FormSix} from "../FormSix/FormSix";
 
 export function FormSteps() {
     const [step, setStep] = useState(1);
-    const [disabledBtn, setDisabledBtn] = useState(false)
     const [formState, setFormState] = useState({});
 
     const formBarChange = () => {
@@ -41,26 +41,62 @@ export function FormSteps() {
         }
     }
 
-    const el = () => {
+    const bttnChange = () => {
+        return (
+            <div className="FormSteps-content__btn">
+                <ButtonNextPrevious
+                    buttonText={'Wstecz'}
+                    onClick={() => setStep(prev => prev - 1)}
+                    disabled={step === 1}
+                />
+                <ButtonNextPrevious
+                    buttonText={step === 5 ? 'Potwierdzam' : 'Dalej'}
+                    onClick={() => setStep(prev => prev + 1)}
+                />
+            </div>
+        )
+    }
+
+    const contentChange = () => {
         if (step < 1) {
             setStep(1)
-        } else if (step > 5) {
-            setStep(5)
+        } else if (step > 6) {
+            setStep(6)
         }
 
         switch (step) {
             case 1:
-                return <FormOne setFormState={setFormState}/>;
+                return <>
+                    <FormOne setFormState={setFormState}/>
+                    {bttnChange()}
+                </>;
             case 2:
-                return <FormTwo setFormState={setFormState}/>;
+                return <>
+                    <FormTwo setFormState={setFormState}/>
+                    {bttnChange()}
+                </>;
             case 3:
-                return <FormThree setFormState={setFormState}/>;
+                return <>
+                    <FormThree setFormState={setFormState}/>
+                    {bttnChange()}
+                </>;
             case 4:
-                return <FormFour setFormState={setFormState}/>;
+                return <>
+                    <FormFour setFormState={setFormState}/>
+                    {bttnChange()}
+                </>;
             case 5:
-                return <FormFive/>;
+                return <>
+                    <FormFive/>
+                    {bttnChange()}
+                </>;
+            case 6:
+                return <FormSix/>
             default:
-                return <FormOne/>;
+                return <>
+                    <FormOne setFormState={setFormState}/>
+                    {bttnChange()}
+                </>;
         }
     }
 
@@ -69,19 +105,7 @@ export function FormSteps() {
             {formBarChange()}
             <div className="FormSteps-background"/>
             <div className="FormSteps-content">
-                {el()}
-                <div className="FormSteps-content__btn">
-                    <ButtonNextPrevious
-                        buttonText={'Wstecz'}
-                        onClick={() => setStep(prev => prev - 1)}
-                        disabled={step === 1}
-                    />
-                    <ButtonNextPrevious
-                        buttonText={'Dalej'}
-                        onClick={() => setStep(prev => prev + 1)}
-                        disabled={step === 5}
-                    />
-                </div>
+                {contentChange()}
             </div>
         </div>
     )

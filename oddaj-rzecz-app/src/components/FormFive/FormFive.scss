@@ -1,0 +1,44 @@
+.FormFive {
+
+  &-form {
+    padding: 4.375rem 0 0 8.875rem;
+
+    &__header {
+      font-size: 2.25rem;
+      font-weight: 600;
+      line-height: 3.0625rem;
+      padding-bottom: 2.8125rem;
+    }
+
+    &-stuff {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 10.8125rem;
+      padding-bottom: 3.125rem;
+
+      &__header {
+        font-size: 1.5rem;
+        font-weight: 600;
+        line-height: 2.0625rem;
+      }
+
+      &__row {
+        display: flex;
+        gap: 1.25rem;
+        align-items: center;
+
+        &__img {
+          height: 3.125rem;
+          width: 3.125rem;
+        }
+
+        &__text {
+           font-size: 1.5rem;
+           font-weight: 400;
+           line-height: 2.0625rem;
+         }
+      }
+    }
+  }
+}
