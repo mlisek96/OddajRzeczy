@@ -1,18 +1,13 @@
-import {Link} from "react-router-dom";
 import './ButtonNextPrevious.scss';
 
-export function ButtonNextPrevious({onClick, linkTo, buttonText}) {
+export function ButtonNextPrevious({onClick, disabled, buttonText}) {
     return (
-        <div
+        <button
             className="ButtonNextPrevious"
             onClick={onClick}
+            disabled={disabled}
         >
-            <Link
-                className='ButtonNextPrevious__link'
-                to={linkTo}
-            >
-                {buttonText}
-            </Link>
-        </div>
+            {buttonText}
+        </button>
     )
 }

@@ -1,4 +1,5 @@
 @import "src/sass/settings/colors";
+@import "src/sass/settings/fonts";
 
 .ButtonNextPrevious {
   font-size: 1.5rem;
@@ -11,13 +12,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  &__link {
-    text-decoration: none;
-    color: $text;
-  }
+  color: $text;
+  font-family: $font-base;
+  background-color: transparent;
 
   &:active {
     border-color: $button-border;
+  }
+
+  &:disabled {
+    color: rgba(60, 60, 60, 0.5);
+    border-color: rgba(60, 60, 60, 0.5);
   }
 }

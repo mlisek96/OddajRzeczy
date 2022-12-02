@@ -1,0 +1,59 @@
+@import "src/sass/settings/colors";
+@import "src/sass/settings/fonts";
+
+.InputBig {
+  max-width: 35.75rem;
+  display: flex;
+  flex-direction: column;
+
+  &-label {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2.0625rem;
+    padding-bottom: 1.25rem;
+  }
+
+  &-input {
+    background-color: transparent;
+    border: 0.75px solid $text;
+    height: 2.5rem;
+    font-size: 1rem;
+    font-family: $font-base;
+    font-weight: 300;
+
+    &:focus {
+      outline: none;
+      border-color: $button-border;
+    }
+  }
+}
+
+.InputSmall {
+  width: 24.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &-label {
+    font-size: 1.5rem;
+    font-weight: 300;
+    max-width: 6.3125rem;
+    line-height: 1.625rem;
+  }
+
+  &-input {
+    background-color: transparent;
+    border: 0.75px solid $text;
+    height: 2.5rem;
+    width: 16rem;
+    font-size: 1rem;
+    font-family: $font-base;
+    font-weight: 300;
+    text-align: center;
+
+    &:focus {
+      outline: none;
+      border-color: $button-border;
+    }
+  }
+}

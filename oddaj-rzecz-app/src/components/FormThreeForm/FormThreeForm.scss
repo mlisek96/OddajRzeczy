@@ -1,0 +1,15 @@
+.FormThreeForm {
+  //height: 39.0625rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &-select {
+    left: 0;
+    transform: translateX(-1.5%);
+  }
+
+  &-checkbox {
+    padding: 3.125rem 0 2.875rem 0;
+  }
+}

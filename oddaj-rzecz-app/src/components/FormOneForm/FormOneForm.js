@@ -2,15 +2,23 @@ import {FormInputRadio} from "../FormInputRadio/FormInputRadio";
 import {ButtonNextPrevious} from "../ButtonNextPrevious/ButtonNextPrevious";
 import './FormOneForm.scss';
 
-export function FormOneForm() {
+export function FormOneForm({setFormState}) {
+    const clickHandler = (e) => {
+        setFormState(prev => {
+            return {
+                ...prev,
+                typeOfHelp: e.target.value
+            }
+        })
+    }
     return (
-        <div className="FormOneForm">
+        <form className="FormOneForm">
             <div className="FormOneForm-inputs">
                 <FormInputRadio
                     name={'formOne'}
                     label={'ubrania, które nadają się do ponownego użycia'}
-                    // value={}
-                    // onClick={}
+                    value="ubrania"
+                    onClick={clickHandler}
                 />
                 <FormInputRadio
                     name={'formOne'}
@@ -37,11 +45,6 @@ export function FormOneForm() {
                     // onClick={}
                 />
             </div>
-            <div className="FormOneForm-btn">
-                <ButtonNextPrevious
-                    buttonText={'Dalej'}
-                />
-            </div>
-        </div>
+        </form>
     )
 }

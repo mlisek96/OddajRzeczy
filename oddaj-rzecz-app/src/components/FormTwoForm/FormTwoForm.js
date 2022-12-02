@@ -10,19 +10,12 @@ export function FormTwoForm() {
                     name={'bags'}
                     label={'Liczba 60l worków:'}
                     placeholder={'-wybierz-'}
-                    value1={'1'}
-                    value2={'2'}
-                    value3={'3'}
-                    value4={'4'}
-                    value5={'5'}
-                />
-            </div>
-            <div className="FormTwoForm-btn">
-                <ButtonNextPrevious
-                    buttonText={'Wstecz'}
-                />
-                <ButtonNextPrevious
-                    buttonText={'Dalej'}
+                    // value={value}
+                    option1={'1'}
+                    option2={'2'}
+                    option3={'3'}
+                    option4={'4'}
+                    option5={'5'}
                 />
             </div>
         </form>
