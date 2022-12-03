@@ -1,0 +1,32 @@
+@import "src/sass/settings/colors";
+
+.Checkbox {
+  display: flex;
+
+  &-label {
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding: 0.6875rem 1.5625rem;
+    flex-wrap: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.75px solid $text;
+
+    &::before, &::after {
+      top: auto;
+      left: 0;
+      right: 0;
+      bottom: 1rem;
+      margin: auto;
+    }
+  }
+
+  &-input {
+    appearance: none;
+  }
+
+  .Checkbox-input:checked~.Checkbox-label {
+    background-color: $button-border;
+  }
+}

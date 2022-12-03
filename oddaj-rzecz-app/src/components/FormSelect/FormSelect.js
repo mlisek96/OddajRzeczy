@@ -1,17 +1,19 @@
 import './FormSelect.scss';
+import {useEffect, useState} from "react";
 
 export function FormSelect({
                                name,
                                label,
-                               onSelect,
+                               onChange,
                                placeholder,
                                value,
-                               option1,
-                               option2,
-                               option3,
-                               option4,
-                               option5
+                               value1,
+                               value2,
+                               value3,
+                               value4,
+                               value5
                            }) {
+
     return (
         <div className="FormSelect">
             <label
@@ -24,44 +26,50 @@ export function FormSelect({
                 className="FormSelect-select"
                 name={name}
                 id={name}
-                onSelect={onSelect}
+                onChange={onChange}
+                value={value}
             >
                 <option
                     className="FormSelect-select__option"
-                    value=''
                     defaultValue=''
+                    key={placeholder}
                 >
                     {placeholder}
                 </option>
                 <option
                     className="FormSelect-select__option"
-                    value={value}
+                    value={value1}
+                    key={value1}
                 >
-                    {option1}
+                    {value1}
                 </option>
                 <option
                     className="FormSelect-select__option"
-                    value={value}
+                    value={value2}
+                    key={value2}
                 >
-                    {option2}
+                    {value2}
                 </option>
                 <option
                     className="FormSelect-select__option"
-                    value={value}
+                    value={value3}
+                    key={value3}
                 >
-                    {option3}
+                    {value3}
                 </option>
                 <option
                     className="FormSelect-select__option"
-                    value={value}
+                    value={value4}
+                    key={value4}
                 >
-                    {option4}
+                    {value4}
                 </option>
                 <option
                     className="FormSelect-select__option"
-                    value={value}
+                    value={value5}
+                    key={value5}
                 >
-                    {option5}
+                    {value5}
                 </option>
             </select>
         </div>

@@ -3,7 +3,7 @@ import IconTshirt from '../../assets/Icon-1.svg'
 import IconRound from '../../assets/Icon-4.svg'
 import './FormFive.scss';
 
-export function FormFive() {
+export function FormFive({formState}) {
     return (
         <div className="FormFive">
             <div className="FormFive-form">
@@ -15,7 +15,7 @@ export function FormFive() {
                         <p
                             className="FormFive-form-stuff__row__text"
                         >
-                            {4} worki, {'ubrania w dobrym stanie'}, {'dzieciom'}
+                            {formState.bags} worki, {formState.type}, {formState.helpGroups}
                         </p>
                     </div>
                     <div className="FormFive-form-stuff__row">
@@ -23,11 +23,11 @@ export function FormFive() {
                         <p
                             className="FormFive-form-stuff__row__text"
                         >
-                            dla lokalizacji: {'Warszawa'}
+                            dla lokalizacji: {formState.localization === '' ? formState.localizationSpecific : formState.localization}
                         </p>
                     </div>
                 </div>
-                <FormFiveForm/>
+                <FormFiveForm formState={formState}/>
             </div>
         </div>
     )

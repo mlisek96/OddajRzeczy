@@ -1,48 +1,48 @@
 import {FormInputRadio} from "../FormInputRadio/FormInputRadio";
-import {ButtonNextPrevious} from "../ButtonNextPrevious/ButtonNextPrevious";
 import './FormOneForm.scss';
 
-export function FormOneForm({setFormState}) {
-    const clickHandler = (e) => {
+export function FormOneForm({formState, setFormState}) {
+    const clickHandler = (event) => {
         setFormState(prev => {
             return {
                 ...prev,
-                typeOfHelp: e.target.value
+                type: event.target.value
             }
         })
     }
+
     return (
         <form className="FormOneForm">
             <div className="FormOneForm-inputs">
                 <FormInputRadio
                     name={'formOne'}
                     label={'ubrania, które nadają się do ponownego użycia'}
-                    value="ubrania"
+                    value='ubrania, które nadają się do ponownego użycia'
                     onClick={clickHandler}
                 />
                 <FormInputRadio
                     name={'formOne'}
                     label={'ubrania, do wyrzucenia'}
-                    // value={}
-                    // onClick={}
+                    value='ubrania, do wyrzucenia'
+                    onClick={clickHandler}
                 />
                 <FormInputRadio
                     name={'formOne'}
                     label={'zabawki'}
-                    // value={}
-                    // onClick={}
+                    value={'zabawki'}
+                    onClick={clickHandler}
                 />
                 <FormInputRadio
                     name={'formOne'}
                     label={'książki'}
-                    // value={}
-                    // onClick={}
+                    value={'książki'}
+                    onClick={clickHandler}
                 />
                 <FormInputRadio
                     name={'formOne'}
                     label={'inne'}
-                    // value={}
-                    // onClick={}
+                    value={'inne'}
+                    onClick={clickHandler}
                 />
             </div>
         </form>
