@@ -3,33 +3,47 @@ import {FormInputCheckbox} from "../FormInputCheckbox/FormInputCheckbox";
 import {FormInput} from "../FormInput/FormInput";
 import './FormThreeForm.scss';
 
-export function FormThreeForm() {
+export function FormThreeForm({formState, setFormState}) {
+    const clickHandler = (event) => {
+        const {name, value} = event.target
+        setFormState(prev => {
+            return {
+                ...prev,
+                [name]: value
+            }
+        })
+    }
+
     return (
         <form className="FormThreeForm">
             <div className="FormThreeForm-select">
                 <FormSelect
                     name={'localization'}
                     placeholder={'-wybierz-'}
-                    // value={value}
-                    option1={'Poznań'}
-                    option2={'Warszawa'}
-                    option3={'Kraków'}
-                    option4={'Wrocław'}
-                    option5={'Katowice'}
+                    value1={'Poznań'}
+                    value2={'Warszawa'}
+                    value3={'Kraków'}
+                    value4={'Wrocław'}
+                    value5={'Katowice'}
+                    onChange={clickHandler}
+                    value={formState.localization}
                 />
             </div>
             <div className="FormThreeForm-checkbox">
                 <FormInputCheckbox
-                    // value={value}
+                    formState={formState}
+                    setFormState={setFormState}
                 />
             </div>
             <div className="FormThreeForm-input">
                 <FormInput
                     type={'text'}
-                    name={'localization'}
-                    // value={value}
+                    name={'localizationSpecific'}
                     label={'Wpisz nazwę konkretnej organizacji (opcjonalnie)'}
                     className={'InputBig'}
+                    setFormState={setFormState}
+                    value={formState.localizationSpecific}
+                    onChange={clickHandler}
                 />
             </div>
         </form>

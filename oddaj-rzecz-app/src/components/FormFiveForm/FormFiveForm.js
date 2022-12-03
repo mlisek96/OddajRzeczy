@@ -2,7 +2,7 @@ import {FormInput} from "../FormInput/FormInput";
 import {FormInputTextarea} from "../FormInputTextarea/FormInputTextarea";
 import './FormFiveForm.scss';
 
-export function FormFiveForm() {
+export function FormFiveForm({formState}) {
     return (
         <div className="FormFiveForm">
             <div className="FormFiveForm-address">
@@ -16,7 +16,7 @@ export function FormFiveForm() {
                         name={'street'}
                         label={'Ulica'}
                         type={'text'}
-                        value={'Prosta 51'}
+                        value={formState.street}
                         className={'InputSummary'}
                         disabled={'disabled'}
                     />
@@ -24,25 +24,25 @@ export function FormFiveForm() {
                         name={'city'}
                         label={'Miasto'}
                         type={'text'}
-                        value={'Warszawa'}
+                        value={formState.city}
                         className={'InputSummary'}
                         disabled={'disabled'}
                     />
                     <FormInput
-                        name={'PostCode'}
+                        name={'postCode'}
                         label={'Kod pocztowy'}
                         // type={'?'}
-                        value={'90-209'}
+                        value={formState.postCode}
                         className={'InputSummary'}
                         disabled={'disabled'}
                     />
                     <FormInput
-                        name={'PhoneNumber'}
+                        name={'phone'}
                         label={'Numer telefonu'}
                         type={'tel'}
                         pattern={'[0-9]{3}-[0-9]{3}-[0-9]{3}'}
                         autoCorrect={'on'}
-                        value={'473 839 483'}
+                        value={formState.phone}
                         className={'InputSummary'}
                         disabled={'disabled'}
                     />
@@ -59,21 +59,21 @@ export function FormFiveForm() {
                         name={'date'}
                         label={'Data'}
                         type={'date'}
-                        value={'2019-10-17'}
+                        value={formState.date}
                         className={'InputSummary'}
                         disabled={'disabled'}
                     />
                     <FormInput
-                        name={'hour'}
+                        name={'time'}
                         label={'Godzina'}
                         type={'time'}
-                        value={'17:30'}
+                        value={formState.time}
                         className={'InputSummary'}
                         disabled={'disabled'}
                     />
                     <FormInputTextarea
-                        name={'notes'}
-                        value={'notatki'}
+                        name={'note'}
+                        value={formState.note}
                         disabled={'disabled'}
                         className={'TextareaSummary'}
                     />

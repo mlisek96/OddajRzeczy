@@ -1,6 +1,6 @@
 import './FormInputTextarea.scss';
 
-export function FormInputTextarea({name, value, disabled, className}) {
+export function FormInputTextarea({name, value, disabled, className, onChange}) {
     return (
         <div className={className}>
             <label
@@ -16,6 +16,7 @@ export function FormInputTextarea({name, value, disabled, className}) {
                 value={value}
                 className={`${className}-textarea`}
                 disabled={disabled}
+                onChange={onChange}
             />
         </div>
     )

@@ -1,30 +1,58 @@
 import './FormInputCheckbox.scss';
+import {FormInputCheckboxSingle} from "../FormInputCheckboxSingle/FormInputCheckboxSingle";
 
-export function FormInputCheckbox({value}) {
+export function FormInputCheckbox({formState, setFormState}) {
+    const clickHandler = (event) => {
+        setFormState(prev => {
+            return {
+                ...prev,
+                helpGroups: event.target.value
+                // helpGroups: [...prev, event.target.value]
+                // helpGroups: [...helpGroups, event.target.value]
+            //jak zebrac info z więcej niż jednego checkboxa na raz
+            }
+        })
+    }
+
     return (
         <fieldset className='Checkbox'>
             <legend className='Checkbox-header'>Komu chcesz pomóc?</legend>
             <div className="Checkbox-options">
-                <div className='Checkbox-options__item'>
-                    <input className='Checkbox-options__item-input' type="checkbox" id='children' value={value}/>
-                    <label className='Checkbox-options__item-label' htmlFor="children">dzieciom</label>
-                </div>
-                <div className='Checkbox-options__item'>
-                    <input className='Checkbox-options__item-input' type="checkbox" id='mothers' value={value}/>
-                    <label className='Checkbox-options__item-label' htmlFor="mothers">samotnym matkom</label>
-                </div>
-                <div className='Checkbox-options__item'>
-                    <input className='Checkbox-options__item-input' type="checkbox" id='homeless' value={value}/>
-                    <label className='Checkbox-options__item-label' htmlFor="homeless">bezdomnym</label>
-                </div>
-                <div className='Checkbox-options__item'>
-                    <input className='Checkbox-options__item-input' type="checkbox" id='disabled' value={value}/>
-                    <label className='Checkbox-options__item-label' htmlFor="disabled">niepełnosprawnym</label>
-                </div>
-                <div className='Checkbox-options__item'>
-                    <input className='Checkbox-options__item-input' type="checkbox" id='elders' value={value}/>
-                    <label className='Checkbox-options__item-label' htmlFor="elders">osobom starszym</label>
-                </div>
+                <FormInputCheckboxSingle
+                    name={'helpGroups'}
+                    id={'children'}
+                    label={'dzieciom'}
+                    value={'dzieciom'}
+                    onClick={clickHandler}
+                />
+                <FormInputCheckboxSingle
+                    name={'helpGroups'}
+                    id={'mothers'}
+                    label={'samotnym matkom'}
+                    value={'samotnym matkom'}
+                    onClick={clickHandler}
+                />
+                <FormInputCheckboxSingle
+                    name={'helpGroups'}
+                    id={'homeless'}
+                    label={'bezdomnym'}
+                    value={'bezdomnym'}
+                    onClick={clickHandler}
+                />
+                <FormInputCheckboxSingle
+                    name={'helpGroups'}
+                    id={'disabled'}
+                    label={'niepełnosprawnym'}
+                    value={'niepełnosprawnym'}
+                    onClick={clickHandler}
+                />
+                <FormInputCheckboxSingle
+                    name={'helpGroups'}
+                    id={'elders'}
+                    label={'osobom starszym'}
+                    value={'osobom starszym'}
+                    onClick={clickHandler}
+                />
             </div>
         </fieldset>
     )

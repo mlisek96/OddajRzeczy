@@ -2,7 +2,17 @@ import {FormInput} from "../FormInput/FormInput";
 import {FormInputTextarea} from "../FormInputTextarea/FormInputTextarea";
 import './FormFourForm.scss';
 
-export function FormFourForm() {
+export function FormFourForm({formState, setFormState}) {
+    const handleChange = (event) => {
+        const {name, value} = event.target
+        setFormState(prev => {
+            return {
+                ...prev,
+                [name]: value
+            }
+        })
+    }
+
     return (
         <form className="FormFourForm">
             <div className="FormFourForm-address">
@@ -16,31 +26,35 @@ export function FormFourForm() {
                         name={'street'}
                         label={'Ulica'}
                         type={'text'}
-                        // value={value}
+                        value={formState.street}
                         className={'InputSmall'}
+                        onChange={handleChange}
                     />
                     <FormInput
                         name={'city'}
                         label={'Miasto'}
                         type={'text'}
-                        // value={value}
+                        value={formState.city}
                         className={'InputSmall'}
+                        onChange={handleChange}
                     />
                     <FormInput
-                        name={'PostCode'}
+                        name={'postCode'}
                         label={'Kod pocztowy'}
                         // type={'?'}
-                        // value={value}
+                        value={formState.postCode}
                         className={'InputSmall'}
+                        onChange={handleChange}
                     />
                     <FormInput
-                        name={'PhoneNumber'}
+                        name={'phone'}
                         label={'Numer telefonu'}
                         type={'tel'}
                         pattern={'[0-9]{3}-[0-9]{3}-[0-9]{3}'}
                         autoCorrect={'on'}
-                        // value={value}
+                        value={formState.phone}
                         className={'InputSmall'}
+                        onChange={handleChange}
                     />
                 </div>
             </div>
@@ -55,21 +69,24 @@ export function FormFourForm() {
                         name={'date'}
                         label={'Data'}
                         type={'date'}
-                        // value={value}
+                        value={formState.date}
                         className={'InputSmall'}
+                        onChange={handleChange}
                     />
                     <FormInput
-                        name={'hour'}
+                        name={'time'}
                         label={'Godzina'}
                         type={'time'}
                         // step={'1800000'}
-                        // value={value}
+                        value={formState.time}
                         className={'InputSmall'}
+                        onChange={handleChange}
                     />
                     <FormInputTextarea
-                        name={'notes'}
-                        // value={value}
+                        name={'note'}
+                        value={formState.note}
                         className={"InputTextarea"}
+                        onChange={handleChange}
                     />
                 </div>
             </div>
