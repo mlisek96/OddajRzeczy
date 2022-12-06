@@ -15,7 +15,7 @@ export function FormThreeForm({formState, setFormState}) {
     }
 
     return (
-        <form className="FormThreeForm">
+        <div className="FormThreeForm">
             <div className="FormThreeForm-select">
                 <FormSelect
                     name={'localization'}
@@ -46,6 +46,6 @@ export function FormThreeForm({formState, setFormState}) {
                     onChange={clickHandler}
                 />
             </div>
-        </form>
+        </div>
     )
 }

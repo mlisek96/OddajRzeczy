@@ -14,7 +14,7 @@ export function FormFourForm({formState, setFormState}) {
     }
 
     return (
-        <form className="FormFourForm">
+        <div className="FormFourForm">
             <div className="FormFourForm-address">
                 <h3
                     className="FormFourForm__header"
@@ -90,6 +90,6 @@ export function FormFourForm({formState, setFormState}) {
                     />
                 </div>
             </div>
-        </form>
+        </div>
     )
 }

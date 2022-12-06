@@ -1,12 +1,11 @@
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
+import {useAuth} from "../../context/AuthContext"
 import {ContactUsFormInput} from "../ContactUsFormInput/ContactUsFormInput";
 import {ButtonLogInRegister} from "../ButtonLoginInRegister/ButtonLogInRegister";
 import './RegisterContainer.scss';
 
 const validateEmail = (email) => {
-    // return email.match(
-    //     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    // )
     let re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     return re.test(email)
 }
@@ -15,22 +14,19 @@ const validateFunction = (register) => {
     const errorMsg = {}
 
     if (!register.email) {
-        // errorMsg.email = 'Entered email is required'
-        errorMsg.email = 'Entered email is invalid'
+        errorMsg.email = 'Entered email is required'
     } else if (validateEmail(register.email) === false) {
         errorMsg.email = 'Entered email is invalid'
     }
 
     if (!register.password) {
-        // errorMsg.password = 'Entered password is required'
-        errorMsg.password = 'Password has contain 6 or more characters'
+        errorMsg.password = 'Entered password is required'
     } else if (register.password.length < 6) {
         errorMsg.password = 'Password has contain 6 or more characters'
     }
 
     if (!register.repeatPassword) {
-        // errorMsg.repeatPassword = 'Entered password is required'
-        errorMsg.repeatPassword = 'Entered password has been the same as above'
+        errorMsg.repeatPassword = 'Entered password is required'
     } else if (register.repeatPassword !== register.password) {
         errorMsg.repeatPassword = 'Entered password has been the same as above'
     }
@@ -40,14 +36,17 @@ const validateFunction = (register) => {
 
 export function RegisterContainer() {
     const [errorMsg, setErrorMsg] = useState(null)
-    const [success, setSuccess] = useState(null)
+    const [success, setSuccess] = useState('')
+    const [loading, setLoading] = useState(false)
     const [register, setRegister] = useState({
         email: '',
         password: '',
         repeatPassword: '',
     })
+    const navigate = useNavigate()
+    const {signup} = useAuth()
 
-    const handleChangeEmail = (event) => {
+    const handleChange= (event) => {
         const {name, value} = event.target
         setRegister(prevRegister => {
             return {
@@ -57,54 +56,43 @@ export function RegisterContainer() {
         })
     }
 
-    const handleChangePassword = (event) => {
-        const {name, value} = event.target
-        setRegister(prevRegister => {
-            return {
-                ...prevRegister,
-                [name]: value
-            }
-        })
-    }
-
-    const handleChangeRepeatPassword = (event) => {
-        const {name, value} = event.target
-        setRegister(prevRegister => {
-            return {
-                ...prevRegister,
-                [name]: value
-            }
-        })
-    }
-
-    function handleClick(event) {
+    const handleClick = async (event) => {
         event.preventDefault();
         const errorMsg = validateFunction(register)
 
         if (errorMsg) {
             setErrorMsg(errorMsg)
-            console.log(errorMsg)
             return
-        } else if (errorMsg === null) {
-            setSuccess('successRegister')
         }
 
-        setRegister({
-            email: '',
-            password: '',
-            repeatPassword: '',
-        })
+        try {
+            setErrorMsg(null)
+            setSuccess('')
+            setLoading(true)
+            await signup(register.email, register.password)
+            navigate('/')
+        } catch (event) {
+            setSuccess('error')
+            setErrorMsg(errorMsg)
+        }
+
+        setLoading(false)
     }
 
     return (
-        <div className="RegisterContainer">
+        <form className="RegisterContainer">
             <div className="RegisterContainer-form">
+                {success === 'error' ? <p
+                    className={'RegisterContainer-form-error'}
+                >
+                    Konto nie zostało utworzone!<br/>Spróbuj ponownie.
+                </p> : null}
                 <ContactUsFormInput
                     name={'email'}
                     label={'Email'}
                     type={'email'}
                     value={register.email}
-                    onChange={handleChangeEmail}
+                    onChange={handleChange}
                     errorMsg={errorMsg}
                 />
                 <ContactUsFormInput
@@ -112,7 +100,7 @@ export function RegisterContainer() {
                     label={'Hasło'}
                     type={'password'}
                     value={register.password}
-                    onChange={handleChangePassword}
+                    onChange={handleChange}
                     errorMsg={errorMsg}
                 />
                 <ContactUsFormInput
@@ -120,7 +108,7 @@ export function RegisterContainer() {
                     label={'Powtórz hasło'}
                     type={'password'}
                     value={register.repeatPassword}
-                    onChange={handleChangeRepeatPassword}
+                    onChange={handleChange}
                     errorMsg={errorMsg}
                 />
             </div>
@@ -135,9 +123,9 @@ export function RegisterContainer() {
                 <ButtonLogInRegister
                     buttonText={'Załóż konto'}
                     onClick={handleClick}
-                    linkTo={success === 'successRegister' ? '/' : null}
+                    disabled={loading}
                 />
             </div>
-        </div>
+        </form>
     )
 }

@@ -1,12 +1,11 @@
 import {useState} from "react";
+import {useNavigate} from "react-router-dom";
+import {useAuth} from "../../context/AuthContext";
 import {ContactUsFormInput} from "../ContactUsFormInput/ContactUsFormInput";
 import {ButtonLogInRegister} from "../ButtonLoginInRegister/ButtonLogInRegister";
 import './LogInContainer.scss';
 
 function validateEmail(email) {
-    // return email.match(
-    //     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    // )
     let re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     return re.test(email)
 }
@@ -32,12 +31,15 @@ const validateFunction = (logIn) => {
 export function LogInContainer() {
     const [errorMsg, setErrorMsg] = useState(null)
     const [success, setSuccess] = useState(null)
+    const [loading, setLoading] = useState(false)
     const [logIn, setLogIn] = useState({
         email: '',
         password: '',
     })
+    const navigate = useNavigate()
+    const {login} = useAuth()
 
-    const handleChangeEmail = (event) => {
+    const handleChange = (event) => {
         const {name, value} = event.target
         setLogIn(prevLogIn => {
             return {
@@ -47,44 +49,43 @@ export function LogInContainer() {
         })
     }
 
-    const handleChangePassword = (event) => {
-        const {name, value} = event.target
-        setLogIn(prevLogIn => {
-            return {
-                ...prevLogIn,
-                [name]: value
-            }
-        })
-    }
-
-    function handleClick(event) {
+    const handleClick = async (event) => {
         event.preventDefault();
         const errorMsg = validateFunction(logIn)
 
         if (errorMsg) {
             setErrorMsg(errorMsg)
-            console.log(errorMsg)
             return
-        } else if (errorMsg === null) {
-            setSuccess('successLogIn')
-            // location.href = '/'
         }
 
-        setLogIn({
-            email: '',
-            password: '',
-        })
+        try {
+            setErrorMsg(null)
+            setSuccess('')
+            setLoading(true)
+            await login(logIn.email, logIn.password)
+            navigate('/')
+        } catch (event) {
+            setSuccess('error')
+            setErrorMsg(errorMsg)
+        }
+
+        setLoading(false)
     }
 
     return (
         <div className="LogInContainer">
             <div className="LogInContainer-form">
+                {success === 'error' ? <p
+                    className={'LogInContainer-form-error'}
+                >
+                    Nie można zalogować!<br/>Spróbuj ponownie.
+                </p> : null}
                 <ContactUsFormInput
                     name={'email'}
                     label={'Email'}
                     type={'email'}
                     value={logIn.email}
-                    onChange={handleChangeEmail}
+                    onChange={handleChange}
                     errorMsg={errorMsg}
                 />
                 <ContactUsFormInput
@@ -92,7 +93,7 @@ export function LogInContainer() {
                     label={'Hasło'}
                     type={'password'}
                     value={logIn.password}
-                    onChange={handleChangePassword}
+                    onChange={handleChange}
                     errorMsg={errorMsg}
                 />
             </div>
@@ -103,11 +104,11 @@ export function LogInContainer() {
                         borderColor: 'transparent'
                     }}
                     linkTo={'/rejestracja'}
+                    disabled={loading}
                 />
                 <ButtonLogInRegister
                     buttonText={"Zaloguj się"}
                     onClick={handleClick}
-                    // linkTo={success === 'successLogIn' ? '/' : null}
                 />
             </div>
         </div>

@@ -1,53 +1,62 @@
-import {useState, useEffect} from "react";
+import {useState} from "react";
+import {useNavigate} from "react-router-dom";
+import {useAuth} from "../../context/AuthContext";
 import {ButtonLogInRegisterSmall} from "../ButtonLogInRegisterSmall/ButtonLogInRegisterSmall";
-import './LoginRegister.scss'
+import './LoginRegister.scss';
 
 export function LoginRegister() {
-    const [login, setLogin] = useState(true)
+    const [error, setError] = useState('')
+    const {currentUser, logout} = useAuth()
+    const navigate = useNavigate()
 
-    // useEffect(() => {
-    //     tutaj będziemy sprawdzać fetchem czy użytkownik jest zalogowany
-    //     później jeżeli tak setLogin(true)
-    // })
+    const handleLogout = async (event) => {
+        try {
+            setError('')
+            await logout()
+            navigate('/wylogowano')
+        } catch (event){
+            setError('Failed to log out')
+        }
+    }
 
     const bttnChange = () => {
-        switch (login) {
-            case true:
-                return <>
-                    <ButtonLogInRegisterSmall
-                        buttonText={'Oddaj rzeczy'}
-                        linkTo={'/oddaj-rzeczy'}
-                        style={{
-                            borderColor: "#FAD648",
-                        }}
-                    />
-                    <ButtonLogInRegisterSmall
-                        buttonText={'Wyloguj'}
-                        linkTo={'/wylogowano'}
-                    />
-                </>
-            case false:
-                return <>
-                    <ButtonLogInRegisterSmall
-                        buttonText={'Zaloguj'}
-                        linkTo={'/logowanie'}
-                    />
-                    <ButtonLogInRegisterSmall
-                        buttonText={'Załóż konto'}
-                        linkTo={'/rejestracja'}
-                        style={{
-                            borderColor: "#FAD648",
-                        }}
-                    />
-                </>
+        if (currentUser) {
+            return <>
+                <p className='Login-message'>
+                    Cześć {currentUser.email}!
+                </p>
+                <ButtonLogInRegisterSmall
+                    buttonText={'Oddaj rzeczy'}
+                    linkTo={'/oddaj-rzeczy'}
+                    style={{
+                        borderColor: "#FAD648",
+                    }}
+                />
+                <ButtonLogInRegisterSmall
+                    buttonText={'Wyloguj'}
+                    linkTo={'/wylogowano'}
+                    onClick={handleLogout}
+                />
+            </>
+        } else {
+            return <>
+                <ButtonLogInRegisterSmall
+                    buttonText={'Zaloguj'}
+                    linkTo={'/logowanie'}
+                />
+                <ButtonLogInRegisterSmall
+                    buttonText={'Załóż konto'}
+                    linkTo={'/rejestracja'}
+                    style={{
+                        borderColor: "#FAD648",
+                    }}
+                />
+            </>
         }
     }
 
     return (
         <ul className="Login">
-            {login === true ? <p className='Login-message'>
-                Cześć {'xyz@abc.com'}!
-            </p> : null}
             {bttnChange()}
         </ul>
     )
