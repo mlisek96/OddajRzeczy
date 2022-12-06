@@ -2,9 +2,9 @@ import React from "react";
 import { IconBrandGithub } from '@tabler/icons';
 import './PageFooter.scss'
 
-export function PageFooter() {
+export function PageFooter({style}) {
     return (
-        <footer className='PageFooter'>
+        <footer className='PageFooter' style={style}>
             <p className="PageFooter__text">Copyright by Coders Lab</p>
             <div className='PageFooter__author'>
                 Created by

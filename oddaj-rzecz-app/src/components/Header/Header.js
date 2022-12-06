@@ -1,9 +1,12 @@
+import {useAuth} from "../../context/AuthContext";
 import {Decoration} from "../Decoration/Decoration";
 import {ButtonBasic} from "../ButtonBasic/ButtonBasic";
 import HomeHeroImage from "../../assets/Home-Hero-Image.jpg";
 import './Header.scss';
 
 export function Header() {
+    const {currentUser} = useAuth()
+
     return (
         <div className="Header">
             <img className='Header-image' src={HomeHeroImage} alt="Home hero image"/>
@@ -11,8 +14,15 @@ export function Header() {
                 <h1 className='Header-content__text'>Zacznij Pomagać!<br/>Oddaj niechciane rzeczy w zaufane ręce</h1>
                 <Decoration/>
                 <div className='Header-content__buttons'>
-                    <ButtonBasic buttonText={'Oddaj rzeczy'} linkTo={'/logowanie'}/>
-                    <ButtonBasic buttonText={'Zorganizuj zbiórkę'} linkTo={'/logowanie'}/>
+                    <ButtonBasic
+                        buttonText={'Oddaj rzeczy'}
+                        linkTo={'/oddaj-rzeczy'}
+                    />
+                    <ButtonBasic
+                        buttonText={'Zorganizuj zbiórkę'}
+                        // linkTo={'/logowanie'}
+                        linkTo={!currentUser ? '/logowanie' : '/404'}
+                    />
                 </div>
             </div>
         </div>

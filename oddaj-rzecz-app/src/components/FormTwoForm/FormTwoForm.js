@@ -12,7 +12,7 @@ export function FormTwoForm({formState, setFormState}) {
     }
 
     return (
-        <form className="FormTwoForm">
+        <div className="FormTwoForm">
             <div className="FormTwoForm-select">
                 <FormSelect
                     name={'bags'}
@@ -27,6 +27,6 @@ export function FormTwoForm({formState, setFormState}) {
                     value={formState.bags}
                 />
             </div>
-        </form>
+        </div>
     )
 }

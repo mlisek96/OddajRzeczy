@@ -18,6 +18,14 @@
     margin: 0 4.09375rem 2.5rem;
     padding: 2.5rem 4.203125rem;
     min-height: 20.5rem;
+
+    &-error {
+      font-size: 1rem;
+      font-weight: 600;
+      color: red;
+      text-align: center;
+      line-height: 1.25rem;
+    }
   }
 
   &-bttns {

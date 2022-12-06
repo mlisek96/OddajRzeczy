@@ -1,7 +1,7 @@
 import {FormInputRadio} from "../FormInputRadio/FormInputRadio";
 import './FormOneForm.scss';
 
-export function FormOneForm({formState, setFormState}) {
+export function FormOneForm({formState, setFormState, onSubmit}) {
     const clickHandler = (event) => {
         setFormState(prev => {
             return {
@@ -11,8 +11,13 @@ export function FormOneForm({formState, setFormState}) {
         })
     }
 
+    // const submitHandler = (event) => {
+    //     event.preventDefault();
+    //     console.log(formState)
+    // }
+
     return (
-        <form className="FormOneForm">
+        <div className="FormOneForm">
             <div className="FormOneForm-inputs">
                 <FormInputRadio
                     name={'formOne'}
@@ -45,6 +50,6 @@ export function FormOneForm({formState, setFormState}) {
                     onClick={clickHandler}
                 />
             </div>
-        </form>
+        </div>
     )
 }

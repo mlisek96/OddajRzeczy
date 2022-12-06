@@ -8,19 +8,25 @@ export function WhoWeHelpMenu({active, setActive}) {
                 buttonText={'Fundacjom'}
                 onClick={() => setActive('Foundations')}
                 active={active}
-                // active={'Foundations'}
+                style={{
+                    borderColor: active === 'Foundations' ? "#3C3C3C" : "transparent"
+                }}
             />
             <WhoWeHelpMenuButton
                 buttonText={'Organizacjom pozarządowym'}
                 onClick={() => setActive('Organization')}
                 active={active}
-                // active={'Organization'}
+                style={{
+                    borderColor: active === 'Organization' ? "#3C3C3C" : "transparent"
+                }}
             />
             <WhoWeHelpMenuButton
                 buttonText={'Lokalnym zbiórkom'}
                 onClick={() => setActive('Collection')}
                 active={active}
-                // active={'Collection'}
+                style={{
+                    borderColor: active === 'Collection' ? "#3C3C3C" : "transparent"
+                }}
             />
         </div>
     )

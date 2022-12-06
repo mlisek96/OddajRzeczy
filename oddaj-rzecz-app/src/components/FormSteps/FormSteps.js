@@ -1,4 +1,7 @@
 import {useState} from "react";
+import {addDoc, collection} from "firebase/firestore"
+import {datebase} from  "../../config/firebase"
+import {useAuth} from "../../context/AuthContext";
 import {FormOne} from "../FormOne/FormOne";
 import {FormTwo} from "../FormTwo/FormTwo";
 import {FormThree} from "../FormThree/FormThree";
@@ -25,6 +28,7 @@ export function FormSteps() {
         time: '',
         note: '',
     });
+    const {currentUser} = useAuth()
 
     const formBarChange = () => {
         switch (step) {
@@ -66,6 +70,8 @@ export function FormSteps() {
                     buttonText={step === 5 ? 'Potwierdzam' : 'Dalej'}
                     onClick={() => setStep(prev => prev + 1)}
                     type={step === 5 ? 'submit' : null}
+                    // type={'submit'}
+
                 />
             </div>
         )
@@ -81,7 +87,7 @@ export function FormSteps() {
         switch (step) {
             case 1:
                 return <>
-                    <FormOne formState={formState} setFormState={setFormState}/>
+                    <FormOne formState={formState} setFormState={setFormState} />
                     {bttnChange()}
                 </>;
             case 2:
@@ -114,13 +120,35 @@ export function FormSteps() {
         }
     }
 
+    const formsRef = collection(datebase, "forms")
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        await addDoc(formsRef, {
+            type: formState.type,
+            bags: formState.bags,
+            localization: formState.localization,
+            helpGroups: formState.helpGroups,
+            localizationSpecific: formState.localizationSpecific,
+            street: formState.street,
+            city: formState.city,
+            postCode: formState.postCode,
+            phone: formState.phone,
+            date: formState.date,
+            time: formState.time,
+            note: formState.note,
+            userEmail: currentUser.email,
+            userId: currentUser.uid
+        })
+    }
+
     return (
         <div className="FormSteps">
             {formBarChange()}
             <div className="FormSteps-background"/>
-            <div className="FormSteps-content">
+            <form className="FormSteps-content" onSubmit={handleSubmit}>
                 {formStepsChange()}
-            </div>
+            </form>
         </div>
     )
 }

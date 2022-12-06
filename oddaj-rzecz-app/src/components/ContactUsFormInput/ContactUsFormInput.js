@@ -13,9 +13,9 @@ export function ContactUsFormInput({type, name, label, placeholder, value, onCha
         } else if (type === 'email') {
             setErrorEmail('Podany email jest nieprawidłowy!')
         } else if (name === 'password') {
-            setErrorPassword('Podane hasło jest za krótkie')
+            setErrorPassword('Podane hasło jest za krótkie!')
         } else if (name === 'repeatPassword') {
-            setErrorRepeatPassword('Hasło niezgodne z podanym powyżej')
+            setErrorRepeatPassword('Hasło niezgodne z podanym powyżej!')
         }
     }, [])
 
