@@ -3,7 +3,7 @@
 .PageFooter {
   background-color: transparent;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   position: absolute;
   bottom: 0;
@@ -14,19 +14,32 @@
     font-size: 0.8125rem;
     font-weight: 400;
     text-align: center;
-    margin: 0.5rem;
+    margin: 0.65rem;
+    opacity: 0.8;
   }
 
   &__author {
     font-size: 0.8125rem;
-    margin: 0.5rem 1rem 0.5rem 0.5rem;
     opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-heart {
+      width: 1.125rem;
+      height: 1.125rem;
+      margin: 0 5px 1px 5px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      opacity: 0.95;
+    }
 
     &-github {
       display: inline-block;
       text-decoration: none;
       color: $background-white;
-      background-color: rgba(60, 60, 60, 0.45);
+      background-color: rgba(60, 60, 60, 0.35);
       border-radius: 3px;
       margin: 0 6px;
       padding: 4px 9px 3px 9px;
