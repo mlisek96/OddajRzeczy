@@ -6,10 +6,9 @@ export function FormInputCheckbox({formState, setFormState}) {
         setFormState(prev => {
             return {
                 ...prev,
-                helpGroups: event.target.value
+                helpGroups: [...prev.helpGroups, event.target.value]
                 // helpGroups: [...prev, event.target.value]
                 // helpGroups: [...helpGroups, event.target.value]
-            //jak zebrac info z więcej niż jednego checkboxa na raz
             }
         })
     }

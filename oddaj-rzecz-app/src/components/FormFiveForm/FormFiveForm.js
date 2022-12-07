@@ -1,8 +1,34 @@
 import {FormInput} from "../FormInput/FormInput";
 import {FormInputTextarea} from "../FormInputTextarea/FormInputTextarea";
+import {addDoc, collection} from "firebase/firestore";
+import {datebase} from "../../config/firebase";
+import {useAuth} from "../../context/AuthContext";
 import './FormFiveForm.scss';
 
 export function FormFiveForm({formState}) {
+    const {currentUser} = useAuth()
+    const formsRef = collection(datebase, "forms")
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        console.log("Wysyłka");
+        const doc = await addDoc(formsRef, {
+            type: formState.type,
+            bags: formState.bags,
+            localization: formState.localization,
+            helpGroups: formState.helpGroups,
+            localizationSpecific: formState.localizationSpecific,
+            street: formState.street,
+            city: formState.city,
+            postCode: formState.postCode,
+            phone: formState.phone,
+            date: formState.date,
+            time: formState.time,
+            note: formState.note,
+            userEmail: currentUser.email,
+            userId: currentUser.uid
+        });
+        console.log(doc);
+    }
     return (
         <div className="FormFiveForm">
             <div className="FormFiveForm-address">
@@ -79,6 +105,14 @@ export function FormFiveForm({formState}) {
                     />
                 </div>
             </div>
+            <form onSubmit={handleSubmit}>
+                <button
+                    onClick={() => console.log("click")}
+                    className={"FormFiveForm-bttn"}
+                >
+                    Potwierdzam
+                </button>
+            </form>
         </div>
     )
 }

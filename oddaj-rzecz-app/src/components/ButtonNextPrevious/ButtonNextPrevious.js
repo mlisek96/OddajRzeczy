@@ -1,11 +1,19 @@
 import './ButtonNextPrevious.scss';
 
-export function ButtonNextPrevious({type, onClick, onSubmit,disabled, buttonText}) {
+export function ButtonNextPrevious({type, onClick, disabled, buttonText}) {
+
+    const clickHandler = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (typeof  onClick === "function") {
+            onClick();
+        }
+    }
+
     return (
         <button
             className="ButtonNextPrevious"
-            onClick={onClick}
-            onSubmit={onSubmit}
+            onClick={clickHandler}
             disabled={disabled}
             type={type}
         >

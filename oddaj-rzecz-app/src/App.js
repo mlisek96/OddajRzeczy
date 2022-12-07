@@ -30,6 +30,7 @@ function App() {
                         <Route path='/wylogowano' element={<LogOut/>}/>
                     </Route>
                     <Route path='/404' element={<NotFoundPage/>}/>
+                    <Route path='*' element={<NotFoundPage/>}/>
                 </Routes>
             </Router>
         </AuthProvider>
