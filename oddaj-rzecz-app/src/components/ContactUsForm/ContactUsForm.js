@@ -5,9 +5,6 @@ import {ButtonSubmit} from "../ButtonSubmit/ButtonSubmit";
 import './ContactUsForm.scss';
 
 const validateEmail = (email) => {
-    // return email.match(
-    //     /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    // )
     let re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     return re.test(email)
 };
@@ -75,7 +72,6 @@ export function ContactUsForm() {
             })
                 .then(response => response.json())
                 .then(data => setSuccess(data))
-                // .then(data => console.log(data))
                 .catch(error => setSuccess(error))
         }
     }

@@ -1,7 +1,7 @@
 import {FormOneForm} from "../FormOneForm/FormOneForm";
 import './FormOne.scss';
 
-export function FormOne({setFormState}) {
+export function FormOne({formState, setFormState}) {
     return (
         <div className="FormOne">
             <div className="FormOne-form">

@@ -6,8 +6,9 @@ import {PageFooter} from "../PageFooter/PageFooter";
 export function NotFoundPageContainer() {
     return (
         <div className="NotFoundPage">
+            <p className="NotFoundPage-header">Błąd 404!</p>
             <DecorationHeader
-                headerText={'Błąd 404! Strona nie została znaleziona!'}
+                headerText={'Strona nie została znaleziona!'}
             />
             <ButtonMainPage
                 buttonText={'Strona główna'}

@@ -5,7 +5,7 @@ import {datebase} from "../../config/firebase";
 import {useAuth} from "../../context/AuthContext";
 import './FormFiveForm.scss';
 
-export function FormFiveForm({formState}) {
+export function FormFiveForm({formState, setFormState, setStep}) {
     const {currentUser} = useAuth()
     const formsRef = collection(datebase, "forms")
     const handleSubmit = async (event) => {
@@ -27,8 +27,25 @@ export function FormFiveForm({formState}) {
             userEmail: currentUser.email,
             userId: currentUser.uid
         });
+
+        setStep(6)
+        setFormState({
+            type: '',
+            bags: '',
+            localization: '',
+            helpGroups: [],
+            localizationSpecific: '',
+            street: '',
+            city: '',
+            postCode: '',
+            phone: '',
+            date: '',
+            time: '',
+            note: '',
+        })
         console.log(doc);
     }
+
     return (
         <div className="FormFiveForm">
             <div className="FormFiveForm-address">
@@ -57,7 +74,6 @@ export function FormFiveForm({formState}) {
                     <FormInput
                         name={'postCode'}
                         label={'Kod pocztowy'}
-                        // type={'?'}
                         value={formState.postCode}
                         className={'InputSummary'}
                         disabled={'disabled'}

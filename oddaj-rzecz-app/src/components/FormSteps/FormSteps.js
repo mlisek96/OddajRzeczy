@@ -9,6 +9,63 @@ import {FormSix} from "../FormSix/FormSix";
 import {ButtonNextPrevious} from "../ButtonNextPrevious/ButtonNextPrevious";
 import './FormSteps.scss';
 
+// const validatePostCode = (postCode) => {
+//     let code = /\d{2}-\d{3}/
+//     return code.test(postCode)
+// }
+
+// const validationFunction = (formState) => {
+//     const errorMsg = {}
+//
+//     if (!formState.type) {
+//         errorMsg.type = 'Chose type of help is required'
+//     }
+//
+//     if (!formState.bags) {
+//         errorMsg.bags = 'Selected amount of bags is required'
+//     }
+//
+//     if (!formState.localization) {
+//         errorMsg.localization = 'Selected localization is required'
+//     } else if (formState.localizationSpecific) {
+//         errorMsg.localization = null
+//     }
+//
+//     if (!formState.helpGroups) {
+//         errorMsg.helpGroups = 'Selected at least one of the help groups is required'
+//     }
+//
+//     if (!formState.street) {
+//         errorMsg.street = 'Entering street is required'
+//     } else if (formState.street.length <= 2) {
+//         errorMsg.street = 'Entered street should be at least 3 characters long'
+//     }
+//
+//     if (!formState.city) {
+//         errorMsg.city = 'Entering city is required'
+//     } else if (formState.city.length <= 2) {
+//         errorMsg.city = 'Entered city should be at least 3 characters long'
+//     }
+//
+//     if (!formState.postCode) {
+//         errorMsg.postCode = 'Entering post code is required'
+//     } else if (validatePostCode(formState.postCode) === false) {
+//         errorMsg.postCode = 'Entered post code is invalid'
+//     }
+//
+//     if (!formState.phone) {
+//         errorMsg.phone = 'Entering phone is required'
+//     } else if (formState.phone.length !== 9) {
+//         errorMsg.phone = 'Entered phone should be 9 characters long '
+//     }
+//
+//     if (!formState.date) {
+//         errorMsg.date = 'Entering date is required'
+//     }
+//
+//     return Object.keys(errorMsg).length > 0 ? errorMsg : null;
+// }
+
 export function FormSteps() {
     const [step, setStep] = useState(1);
     const [formState, setFormState] = useState({
@@ -55,21 +112,6 @@ export function FormSteps() {
     }
 
     const bttnChange = () => {
-        // return (
-        //     <div className="FormSteps-content__btn">
-        //         <ButtonNextPrevious
-        //             buttonText={'Wstecz'}
-        //             onClick={() => setStep(prev => prev - 1)}
-        //             disabled={step === 1}
-        //         />
-        //         <ButtonNextPrevious
-        //             buttonText={step === 5 ? 'Potwierdzam' : 'Dalej'}
-        //             onClick={() => setStep(prev => prev + 1)}
-        //             type={step === 5 ? 'submit' : null}
-        //         />
-        //     </div>
-        // )
-
         if (step === 5) {
             return (
                 <div className="FormSteps-content__btn">
@@ -91,7 +133,6 @@ export function FormSteps() {
                     <ButtonNextPrevious
                         buttonText={step === 5 ? 'Potwierdzam' : 'Dalej'}
                         onClick={() => setStep(prev => prev + 1)}
-                        // type={step === 5 ? 'submit' : null}
                     />
                 </div>
             )
@@ -128,8 +169,13 @@ export function FormSteps() {
                 </>;
             case 5:
                 return <>
-                    <FormFive formState={formState}/>
-                    {bttnChange()}
+                    <FormFive
+                        formState={formState}
+                        setFormState={setFormState}
+                        setStep={setStep}
+                    />
+                        {bttnChange()}
+
                 </>;
             case 6:
                 return <FormSix setFormState={setFormState}/>
