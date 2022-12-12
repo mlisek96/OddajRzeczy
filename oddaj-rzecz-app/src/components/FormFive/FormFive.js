@@ -3,7 +3,7 @@ import IconTshirt from '../../assets/Icon-1.svg'
 import IconRound from '../../assets/Icon-4.svg'
 import './FormFive.scss';
 
-export function FormFive({formState}) {
+export function FormFive({formState, setFormState, setStep}) {
     return (
         <div className="FormFive">
             <div className="FormFive-form">
@@ -27,7 +27,11 @@ export function FormFive({formState}) {
                         </p>
                     </div>
                 </div>
-                <FormFiveForm formState={formState}/>
+                <FormFiveForm
+                    formState={formState}
+                    setFormState={setFormState}
+                    setStep={setStep}
+                />
             </div>
         </div>
     )
