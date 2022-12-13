@@ -18,7 +18,7 @@ function App() {
                     <Route path='/' element={<Layout/>}>
                         <Route path='/' element={<Home/>}/>
                         <Route
-                            path='/oddaj-rzeczy'
+                            path='/oddaj-rzeczy-form'
                             element={
                                 <PrivateRoute>
                                     <Form/>
