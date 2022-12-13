@@ -16,9 +16,9 @@ function App() {
             <Router>
                 <Routes>
                     <Route path='/' element={<Layout/>}>
-                        <Route path='/' element={<Home/>}/>
+                        <Route path='/oddaj-rzeczy' element={<Home/>}/>
                         <Route
-                            path='/oddaj-rzeczy-form'
+                            path='/formularz'
                             element={
                                 <PrivateRoute>
                                     <Form/>
