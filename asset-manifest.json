@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/oddaj-rzeczy/static/css/main.6cd7c034.css",
-    "main.js": "/oddaj-rzeczy/static/js/main.2c09dd36.js",
+    "main.js": "/oddaj-rzeczy/static/js/main.e8c881dd.js",
     "static/media/Background-Contact-Form.jpg": "/oddaj-rzeczy/static/media/Background-Contact-Form.655c54427d3b66427460.jpg",
     "static/media/People.jpg": "/oddaj-rzeczy/static/media/People.0292d7308d2691da4c4a.jpg",
     "static/media/Form-Hero-Image.jpg": "/oddaj-rzeczy/static/media/Form-Hero-Image.75cd77265f1736b72327.jpg",
@@ -16,10 +16,10 @@
     "static/media/heart.svg": "/oddaj-rzeczy/static/media/heart.6dcaf8480c293f60f57f0b11bca76441.svg",
     "index.html": "/oddaj-rzeczy/index.html",
     "main.6cd7c034.css.map": "/oddaj-rzeczy/static/css/main.6cd7c034.css.map",
-    "main.2c09dd36.js.map": "/oddaj-rzeczy/static/js/main.2c09dd36.js.map"
+    "main.e8c881dd.js.map": "/oddaj-rzeczy/static/js/main.e8c881dd.js.map"
   },
   "entrypoints": [
     "static/css/main.6cd7c034.css",
-    "static/js/main.2c09dd36.js"
+    "static/js/main.e8c881dd.js"
   ]
 }
