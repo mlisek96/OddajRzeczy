@@ -7,7 +7,7 @@ export function Navigation() {
     return (
         <ul className="Menu">
             <li>
-                <NavLink className="Menu__item" to='/'>Start</NavLink>
+                <NavLink className="Menu__item" to='/oddaj-rzeczy'>Start</NavLink>
             </li>
             <li>
                 <Link

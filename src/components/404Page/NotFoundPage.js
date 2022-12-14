@@ -12,7 +12,7 @@ export function NotFoundPageContainer() {
             />
             <ButtonMainPage
                 buttonText={'Strona główna'}
-                linkTo={'/'}
+                linkTo={'/oddaj-rzeczy'}
                 style={{
                     marginTop: '2.1875rem',
                 }}

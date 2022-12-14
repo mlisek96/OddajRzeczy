@@ -63,7 +63,7 @@ export function LogInContainer() {
             setSuccess('')
             setLoading(true)
             await login(logIn.email, logIn.password)
-            navigate('/')
+            navigate('/oddaj-rzeczy')
         } catch (event) {
             setSuccess('error')
             setErrorMsg(errorMsg)

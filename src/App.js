@@ -12,6 +12,28 @@ import './sass/main.scss';
 
 function App() {
     return (
+        // <AuthProvider>
+        //     <Router>
+        //         <Routes>
+        //             <Route path='/' element={<Layout/>}>
+        //                 <Route path='/' element={<Home/>}/>
+        //                 <Route
+        //                     path='/oddaj-rzeczy'
+        //                     element={
+        //                         <PrivateRoute>
+        //                             <Form/>
+        //                         </PrivateRoute>
+        //                     }
+        //                 />
+        //                 <Route path='/logowanie' element={<LogIn/>}/>
+        //                 <Route path='/rejestracja' element={<Register/>}/>
+        //                 <Route path='/wylogowano' element={<LogOut/>}/>
+        //             </Route>
+        //             <Route path='/404' element={<NotFoundPage/>}/>
+        //             <Route path='*' element={<NotFoundPage/>}/>
+        //         </Routes>
+        //     </Router>
+        // </AuthProvider>
         <AuthProvider>
             <Router>
                 <Routes>

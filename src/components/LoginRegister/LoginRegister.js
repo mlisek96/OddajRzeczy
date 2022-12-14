@@ -27,7 +27,7 @@ export function LoginRegister() {
                 </p>
                 <ButtonLogInRegisterSmall
                     buttonText={'Oddaj rzeczy'}
-                    linkTo={'/oddaj-rzeczy'}
+                    linkTo={'/formularz'}
                     style={{
                         borderColor: "#FAD648",
                     }}
