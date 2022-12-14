@@ -1,5 +1,6 @@
 import {DecorationHeader} from "../DecorationHeader/DecorationHeader";
 import './FormSix.scss';
+import {ButtonMainPage} from "../ButtonMainPage/ButtonMainPage";
 
 export function FormSix() {
     return (
@@ -9,6 +10,13 @@ export function FormSix() {
                 style={{
                     width: '39.25rem',
                     fontWeight: '300'
+                }}
+            />
+            <ButtonMainPage
+                buttonText={'Strona główna'}
+                linkTo={'/oddaj-rzeczy'}
+                style={{
+                    marginTop: '2.1875rem',
                 }}
             />
         </div>

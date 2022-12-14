@@ -18,6 +18,20 @@
     opacity: 0.8;
   }
 
+  &__github {
+    display: inline-block;
+    text-decoration: none;
+    color: $background-white;
+    background-color: rgba(60, 60, 60, 0.35);
+    border-radius: 3px;
+    margin: 0 6px;
+    padding: 4px 9px 3px 9px;
+
+    &__icon {
+      transform: translateY(15%);
+    }
+  }
+
   &__author {
     font-size: 0.8125rem;
     opacity: 0.8;
@@ -34,19 +48,14 @@
       background-size: contain;
       opacity: 0.95;
     }
+  }
 
-    &-github {
-      display: inline-block;
-      text-decoration: none;
-      color: $background-white;
-      background-color: rgba(60, 60, 60, 0.35);
-      border-radius: 3px;
-      margin: 0 6px;
-      padding: 4px 9px 3px 9px;
-
-      &__icon {
-        transform: translateY(15%);
-      }
-    }
+  &__feedback {
+    font-size: 0.75rem;
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 0.5rem;
   }
 }

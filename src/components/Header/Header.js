@@ -16,7 +16,7 @@ export function Header() {
                 <div className='Header-content__buttons'>
                     <ButtonBasic
                         buttonText={'Oddaj rzeczy'}
-                        linkTo={'/oddaj-rzeczy'}
+                        linkTo={'/formularz'}
                     />
                     <ButtonBasic
                         buttonText={'Zorganizuj zbiórkę'}
