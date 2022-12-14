@@ -6,7 +6,7 @@
 
 Click the link and check webpage: https://mlisek96.github.io/oddaj-rzeczy/
 
-![demo_screenshot]()
+![demo_screenshot](src/assets/demo_oddaj-rzeczy.png)
 
 **Nice watch! Hope you would like it!**
 
@@ -57,7 +57,7 @@ multi-stage form składający się of six main components which are next steps o
 
 ## 💾 Instalation
 
-1) git clone https://github.com/mlisek96/OddajRzeczy.git
+1) git clone https://github.com/mlisek96/oddaj-rzeczy.git
 2) npm install 
 3) npm start
 
