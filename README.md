@@ -1,6 +1,6 @@
 # Welcome to Oddaj Rzeczy!
 
-> **PAGE CONCEPT**: The project is a webstie which purpose is to creats a place where everyone will be able to give away unnecessary items of clothing to trusted institutions. By using a transparent, multi-stage form that will make it easier for user to donate items.
+> **PAGE CONCEPT**: The project is a webstie which purpose is to creats a place where everyone will be able to give away unnecessary items of clothing to trusted institutions. By using a transparent, multi-stage form that will make it easier for user to donate items. The project is based on Google Firebase, with user datebase and form collection.
 
 ## 🦄 DEMO
 
