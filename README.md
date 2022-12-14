@@ -1,16 +1,23 @@
-# Oddaj Rzeczy
+# Welcome to Oddaj Rzeczy!
 
-Still working on it...
+> **PAGE CONCEPT**: The project is a webstie which purpose is to creats a place where everyone will be able to give away unnecessary items of clothing to trusted institutions. By using a transparent, multi-stage form that will make it easier for user to donate items.
 
-The project is a webstie which purpose is to creats a place where everyone will be able to give away unnecessary items of clothing to trusted institutions. By using a transparent, multi-stage form that will make it easier for user to donate items.
+## 🦄 DEMO
 
-## Quick project review
+Click the link and check webpage: https://mlisek96.github.io/oddaj-rzeczy/
 
-Project creats by using React (BrowserRouter, Pagination, useState, useEffect, Links from react-router-dom and react-scroll, NavLinks, hooks and more).
+![demo_screenshot]()
 
-Styling by Sass.
+**Nice watch! Hope you would like it!**
 
-Compiling by Create-React-App.
+## 📓 TECHNOLOGIES
+
+* React.js with Hooks, Pagination, BrowserRouter, Links, Scroll and more
+* SASS
+* Create-React-App
+* Google Firebase
+
+## 📦 QUICK PROJECT REVIEW
 
 ### Home Page
 Contaig form 8 sections:
@@ -48,13 +55,17 @@ include register form, with created validation thanks to using state of the comp
 ### Form Oddaj Rzeczy
 multi-stage form składający się of six main components which are next steps of the form. Using pagination, state of components to get te nessesary values from inputs.
 
-## Instalation
+## 💾 Instalation
 
 1) git clone https://github.com/mlisek96/OddajRzeczy.git
 2) npm install 
 3) npm start
 
-## Contact
+## 👮‍♂️ License
+
+See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
+
+## ☎️ Contact
 
 In case of any comments or advice please contact with my by Issues :)
 
