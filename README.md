@@ -67,7 +67,7 @@ See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
 
 ## ☎️ Contact
 
-In case of any comments or advice please contact with my by Issues :)
+In case of any comments or advice please contact with me by Issues :)
 
 
 [//]: # (## Available Scripts)
