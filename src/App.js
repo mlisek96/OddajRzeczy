@@ -51,7 +51,7 @@ function App() {
                         <Route path='/rejestracja' element={<Register/>}/>
                         <Route path='/wylogowano' element={<LogOut/>}/>
                     </Route>
-                    <Route path='/404' element={<NotFoundPage/>}/>
+                    {/*<Route path='/404' element={<NotFoundPage/>}/>*/}
                     <Route path='*' element={<NotFoundPage/>}/>
                 </Routes>
             </Router>
